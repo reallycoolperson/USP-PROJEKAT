@@ -1,0 +1,30 @@
+//to do
+
+marti:
+o meni (unositi podatke o porodici, o stanovanju, bolestima, porodicni ljekar)
+istorija
+
+
+marija:
+uputi,  nova forma za zakazivanje termina
+analize
+
+
+==============================
+simptomi naci kako se cita iz vue selected
+analiza -> zakazivanje termina
+u local storage (po jednog korisnika da se moze ulogovati)
+==============================
+ljekar
+-
+-
+-
+-
+-
+==============================
+moderator
+-
+==============================
+admin
+-
+==============================
