@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title> Food delivery - Delivery </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="klaseIndex.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	    	<!-- font awesome  
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    	
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
+ <script>
+ function meksicka()
+ { 
+ var s =  "  <div class = 'row natpis'>  " +
+	  + " <div class = 'col' > " +
+	  "<div class='card-group' > <div class='card' > " + 
+	" <a href = 'Kuya_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_kuya.png' alt='Card image cap'> </a> <div class = 'card-body' > " + 
+	  "<h5 class='card-title text-muted'>Restaurant - Kuya J</h5>   " +
+     "	  <p class='text-muted '> Kuya J known for its diverse enchilles, chefs from Mexico have been rewarded many times.</p>    </div>  <div class='card-footer'>  " +
+   "	 <small class='text-muted' >Kuya J - Mexican food</small> </div> </div>";
+     var s2 =   " <div class='card' > " +
+	  "  <a href = 'Hugos_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_hugos.png' alt='Card image cap'> </a>" + 
+	 "  <div class = 'card-body' > <h5 class='card-title text-muted'>Restaurant - Hugo's</h5>    " +
+   "	 <p class='text-muted '> One of the best and most favorable restaurants. Tortilla is the best in town.</p>    </div> " +
+"  <div class='card-footer'> " + 
+ " <small class='text-muted' >Hugo's - Mexican food</small> </div> </div> </div> </div> </div> " ;
+ var uk = s+s2;
+  
+      document.getElementById('pisi').innerHTML = uk;
+ }
+ 
+ function kineska()
+ {
+
+     var uk =   "  <div class = 'row natpis'>  " +
+	  + " <div class = 'col' > " +
+	  "<div class='card-group' >  <div class='card' > " +
+	  "  <a href = 'Sushi_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_sushi.png' alt='Card image cap'> </a>" + 
+	 "  <div class = 'card-body' > <h5 class='card-title text-muted'>Restaurant - Sushi</h5>    " +
+   "	 <p class='text-muted '> What is smoking here, Chingi Li prepares sushi! Come with your family and taste our best specialties at promotional prices every first weekend of the month. We are waiting for you</p>    </div> " +
+"  <div class='card-footer'> " + 
+ " <small class='text-muted' >Sushi - Chineese food</small> </div> </div> </div> </div> </div> " ;
+  
+      document.getElementById('pisi').innerHTML = uk;
+ }
+ function veganska()
+ {
+  var uk =   "  <div class = 'row natpis'>  " +
+	  + " <div class = 'col' > " +
+	  "<div class='card-group' >  <div class='card' > " +
+	  " <a href = 'Vegan_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_vegan.png' alt='Card image cap'> </a> " + 
+	 "  <div class = 'card-body' > <h5 class='card-title text-muted'>Restaurant - Vegan</h5>    " +
+   "	 <p class='text-muted '> At last the first vegan restaurant in Belgrade! Do not miss out on healthy food! Service, ambience and food at the highest level! Come, visit us and see for yourself, you will not repent!</p>    </div> " +
+"  <div class='card-footer'> " + 
+ " <small class='text-muted' >Vegan - Vegan food</small> </div> </div> </div> </div> </div> " ;
+ 
+       document.getElementById('pisi').innerHTML = uk;
+ }
+ 
+ 
+ 
+  function brza()
+ {
+
+ 
+ var uk ="  <div class = 'row natpis'>  " +
+	  + " <div class = 'col' > " +
+	  "<div class='card-group' > <div class='card' > " +
+	  " <a href = 'McDonalds_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_mcdonalds.jpg' alt='Card image cap'> </a> " + 
+	 "  <div class = 'card-body' > <h5 class='card-title text-muted'>Restaurant - Mc Donald's</h5>    " +
+   "	 <p class='text-muted '> At last the first vegan restaurant in Belgrade! Do not miss out on healthy food! Service, ambience and food at the highest level! Come, visit us and see for yourself, you will not repent!</p>    </div> " +
+"  <div class='card-footer'> " + 
+ " <small class='text-muted' >Mc Donald's - Fast food</small> </div>  </div>  </div>  </div> </div> " ; 
+  
+      document.getElementById('pisi').innerHTML = uk;
+ }
+ 
+
+function domaca()
+ {
+	
+var s =  "  <div class = 'row natpis' >  " +
+	  + " <div class = 'col' > " +
+	  "<div class='card-group' > <div class='card' >  <a href = 'Gabriel_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_gabriel.png' alt='Card image cap'> </a> <div class = 'card-body' > " + 
+	  "<h5 class='card-title text-muted'>Restaurant - Gabriel</h5>   " +
+     "	  <p class='text-muted '> Taste your homeland food. Traditional food from Serbia, Bosnia and Montenegro.</p>    </div>  <div class='card-footer'>  " +
+   "	 <small class='text-muted' >Gabriel - Traditional food</small> </div> </div> ";
+
+ var s1 =  " <div class='card' > <a href = 'Wendy_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_wendy.png' alt='Card image cap'> </a> <div class = 'card-body' > " + 
+	  "<h5 class='card-title text-muted'>Restaurant - Wendy</h5>   " +
+     "	  <p class='text-muted '> All at one place. Do not miss this pleasure. </p>    </div>  <div class='card-footer'>  " +
+   "	 <small class='text-muted' >Wendy - Traditional food</small> </div> </div>";
+   
+     var s2 =   " <div class='card' > " +
+	  " <a href = 'Misa_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_misa.png' alt='Card image cap'> </a> " + 
+	 "  <div class = 'card-body' > <h5 class='card-title text-muted'>Restaurant - Misa</h5>    " +
+   "	 <p class='text-muted '>  Homemade food for gourmets only. Enjoy the taste! </p>    </div> " +
+"  <div class='card-footer'> " + 
+ " <small class='text-muted' >Misa - Traditional food</small> </div> </div></div></div> </div> " ;
+ var uk = s+s1+s2;
+  
+      document.getElementById('pisi').innerHTML = uk;
+ }
+ 
+ function italijanska()
+ {
+ var s =  "  <div class = 'row natpis' >  " +
+	  + " <div class = 'col' > " +
+	  "<div class='card-group' > <div class='card' >  <a href = 'Obrok_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_restaurant.png' alt='Card image cap'> </a>  <div class = 'card-body' > " + 
+	  "<h5 class='card-title text-muted'>Restaurant - Meal</h5>   " +
+     "	  <p class='text-muted '> Our food is more creative than the name! Come and see for yourself or order on doStana.com</p>    </div>  <div class='card-footer'>  " +
+   "	 <small class='text-muted' >Meal - Italian food</small> </div> </div>";
+    
+ var s1 =  "<div class='card' > " + 
+	" <a href = 'Chief_Hrana_eng.html'> <img class= 'card-img-top slika_res' src='fotografije/Restorani_chief.png' alt='Card image cap'> </a> <div class = 'card-body' > " + 
+	  "<h5 class='card-title text-muted'>Restaurant - Chief</h5>   " +
+     "	  <p class='text-muted '>We are using real recipes from Italy. You will feel like you are there! </p>    </div>  <div class='card-footer'>  " +
+   "	 <small class='text-muted' >Chief - Italian food</small> </div> </div>";
+ var uk = s+s1;
+  
+      document.getElementById('pisi').innerHTML = uk;
+ }
+ 
+   
+ </script>
+ 
+ 
+  </head>
+  
+  
+  
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
+       <img src='fotografije/dostana2.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
+	   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dobar_navbar" aria-controls="dobar_navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+		
+        <div class="collapse navbar-collapse" id="dobar_navbar">
+         
+		  <ul class="ulN navbar-nav">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="index_eng.html">Home</a>
+					</li>
+					
+					<li class="ulNli nav-item ">
+						<a class="ulNlia avisited nav-link dropdown-toggle"  href="svi_restorani_eng.html">Restaurants</a>
+                         <span class="caret"></span></a> 
+                           <ul class=" ulN dropdown-menu">
+                           <li><a class="ulNlia" href="Restorani_Vracar_eng.html"> Vracar</a></li>
+                           <li><a class="ulNlia" href="Restorani_Palilula_eng.html"> Palilula</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zemun_eng.html"> Zemun</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zvezdara_eng.html"> Zvezdara</a></li>
+                            </ul>
+                   </li>
+	
+						
+					<li class=" ulNli nav-item active">
+						<a class="ulNlia nav-link" href="dostava_eng.html">Delivery</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="korpa_eng.html">Cart</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="tim_eng.html">About us</a>
+					</li> 
+					
+					
+				
+					</ul>
+					   
+					   
+					   
+					   
+		   <ul class="ulN navbar-nav ml-auto">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="dostava.html"><img src = "fotografije/srb.png" width = "40px" height = "30px"></a>
+					</li> 
+					
+					<li class=" ulNli nav-item">
+					<a class="ulNlia nav-link" href="dostava_eng.html">	<img src = "fotografije/eng.png" width = "40px" height = "30px"></a>
+					</li>
+		    </ul>
+					   
+  
+
+        </div>
+      </nav>
+    </header> <!--kraj navbara-->
+	
+	  <ul class="breadcrumb" style='margin-top:87px'>
+              <li class="breadcrumb-item"><a href="index_eng.html">Home</a></li>
+              <li class="breadcrumb-item active">Delivery</li>	 
+       </ul>
+		
+			<div class="jumbotron jumbotron-fluid" style='margin-top:-25px'>
+  <div class="container" >
+    <h1 class="display-9" align = "center" style = "font-family: Decorative">              
+  
+<font color = "#343A40">  <i class="fa fa-cutlery" aria-hidden="true"></i> Order food in a few steps!  <i class="fa fa-cutlery" aria-hidden="true"></i></font> 
+</h1>
+  </div>
+</div>
+		
+		
+ <div class="row" style = "margin-top: 50px">
+    <div class="col-md-3 card bg-dark text-white" >
+    <article class="card-group-item">
+		<header class="card-header">
+			<h6 class="title"> <b>  <font color = "white"> Choose a restaurant by type of food:</font>  </b> </h6>
+		</header>
+		
+		<div class="filter-content">
+			<div class="card-body">
+			
+			
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="tip_hrane" value="" onclick = "meksicka()">
+			  <span class="form-check-label">
+			   Mexican food
+			  </span>
+			</label>
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="tip_hrane" value="" onclick = "domaca()">
+			  <span class="form-check-label">
+			    Traditional food
+			  </span>
+			</label>
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="tip_hrane" value="" onclick = "brza()">
+			  <span class="form-check-label">
+			  Fast food
+			  </span>
+			</label>
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="tip_hrane" value="" onclick = "veganska()">
+			  <span class="form-check-label">
+			   Vegan food
+			  </span>
+			</label>
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="tip_hrane" value="" onclick = "kineska()">
+			  <span class="form-check-label">
+			   Chinese food
+			  </span>
+			</label>
+			<label class="form-check">
+			  <input class="form-check-input" type="radio" name="tip_hrane" value="" onclick = "italijanska()">
+			  <span class="form-check-label">
+			   Italian food
+			  </span>
+			</label>
+			</div> <!-- card-body.// -->
+		</div>
+	</article> <!-- card-group-item.// -->
+    </div>
+	
+	<!---------------------- RESTORANIIIIIIIIIIIIIII-------------------------------------->
+    <div class=" col-md-9 card  text-white"  id= "pisi" >
+	<div class = "row"> 
+	   <div class = "col" >
+	       <div class="card-group" id = "grupa">
+           <div class="card" id = "1">
+          <a href = "Kuya_Hrana_eng.html">  <img class="card-img-top slika_res" src="fotografije/Restorani_kuya.png" alt="Card image cap"> </a>
+           <div class="card-body" >
+             <h5 class="card-title text-muted"> Kuya J</h5>
+              <p class="text-muted "> Kuya J known for its diverse enchilles, chefs from Mexico have been rewarded many times.</p>
+           </div>
+       <div class="card-footer">
+        <small class="text-muted">Kuya J restoran - Mexican food</small>
+       </div>
+         </div>
+  <div class="card" id = "2">
+       <a href = "Hugos_Hrana_eng.html">  <img class="card-img-top slika_res" src="fotografije/Restorani_hugos.png" alt="Card image cap"> </a>
+    <div class="card-body">
+      <h5 class="card-title text-muted"> Hugo's</h5>
+      <p class="text-muted ">One of the best and most favorable restaurants. Tortilla is the best in town.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Hugo's - Mexican food</small>
+    </div>
+  </div>
+  
+  <div class="card" id = "3">
+       <a href = "Wendy_Hrana_eng.html">  <img class="card-img-top slika_res" src="fotografije/Restorani_wendy.png" alt="Card image cap"> </a>
+    <div class="card-body">
+      <h5 class="card-title  text-muted"> Wendy</h5>
+      <p class="text-muted ">All at one place. Do not miss this pleasure. </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Wendy -  Traditional food</small>
+    </div>
+  </div>
+  
+    </div>
+  </div>
+    </div>
+  
+ 
+  <!-----------------2. red----------------->
+  <div id = "red2">
+  <div class = "row" > 
+	   <div class = "col " > 
+	       <div class="card-group" id="red2" >
+           <div class="card" id = "4">
+           <a href = "Gabriel_Hrana_eng.html">   <img class="card-img-top slika_res" src="fotografije/Restorani_gabriel.png" alt="Card image cap"> </a>
+           <div class="card-body">
+             <h5 class="card-title  text-muted"> Gabriel</h5>
+              <p class="text-muted "> Taste your homeland food. Traditional food from Serbia, Bosnia and Montenegro.  </p>
+           </div>
+       <div class="card-footer">
+        <small class="text-muted">Gabriel - Tradicial food</small>
+       </div>
+         </div>
+  <div class="card" id = "5">
+    <a href = "Chief_Hrana_eng.html">   <img class="card-img-top slika_res" src="fotografije/Restorani_chief.png" alt="Card image cap"> </a>
+    <div class="card-body">
+      <h5 class="card-title  text-muted">Chief</h5>
+      <p class="text-muted "> We are using real recipes from Italy. You will feel like you are there!
+ </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Chief - Italian food</small>
+    </div>
+  </div>
+  
+  <div class="card" id = "6">
+    <a href = "Misa_Hrana_eng.html">   <img class="card-img-top slika_res" src="fotografije/Restorani_misa.png" alt="Card image cap"> </a>
+    <div class="card-body">
+      <h5 class="card-title  text-muted">Misa</h5>
+      <p class="text-muted "> Enjoy tradicional food in our restaurant! Noone better!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Misa - Traditional food</small>
+    </div>
+  </div>
+  
+    </div>
+  </div>
+    </div>
+	</div>
+  <!----------------------------------3. red------------------------------------>
+   <div id = "red3">
+    <div class = "row"> 
+	   <div class = "col"> 
+	       <div class="card-group">
+           <div class="card" id = "7">
+           <a href = "Obrok_Hrana_eng.html">   <img class="card-img-top slika_res" src="fotografije/Restorani_restaurant.png" alt="Card image cap"> </a>
+           <div class="card-body">
+             <h5 class="card-title  text-muted">Meal</h5>
+              <p class="text-muted ">You like italian food? What are you waiting for? Come to us!</p>
+           </div>
+       <div class="card-footer">
+        <small class="text-muted">Meal - Italian food</small>
+       </div>
+         </div>
+  <div class="card" id = "8">
+     <a href = "Vegan_Hrana_eng.html">  <img class="card-img-top slika_res" src="fotografije/Restorani_vegan.png" alt="Card image cap"> </a>
+    <div class="card-body">
+      <h5 class="card-title  text-muted">Vegan</h5>
+      <p class="text-muted ">First Vegan restaurant in the town. Hurry up and visit us!</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"> Vegan - Vegan food</small>
+    </div>
+  </div>
+  
+  <div class="card" id = "9">
+    <a href = "Sushi_Hrana_eng.html">   <img class="card-img-top slika_res" src="fotografije/Restorani_sushi.png" alt="Card image cap"> </a>
+    <div class="card-body">
+      <h5 class="card-title  text-muted">Sushi</h5>
+   <!--kom-->   <p class="text-muted "> What is smoking here, Chingi Li prepares sushi! The best sushi in town.
+</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Sushi - Chineese food</small>
+    </div>
+  </div>
+  
+    </div>
+  </div>
+    </div>
+	
+	</div>
+	<!-----------------4.red------------->
+	<div id = "red4">
+	<div class = "row"> 
+	   <div class = "col"> 
+	       <div class="card-group">
+           <div class="card" id = "10">
+          <a href = "McDonalds_Hrana_eng.html">    <img class="card-img-top slika_res" src="fotografije/Restorani_mcdonalds.jpg" alt="Card image cap"> </a>
+           <div class="card-body">
+             <h5 class="card-title  text-muted">McDonald's</h5>
+              <p class="text-muted ">If you have problems with obesity, we do not sincerely recommend. Otherwise, welcome!
+</p>
+           </div>
+       <div class="card-footer">
+        <small class="text-muted">Mc Donald's - Fast food</small>
+       </div>
+         </div>
+  <div class = "col"> </div>
+  <div class = "col"> </div>
+    </div>
+    </div>
+	</div>
+  
+  </div>
+  </div>
+  
+  </div>
+  <br>
+  <br>
+  <br>
+	
+      <!-- FOOTER -->
+      <footer class="container">
+         <p class="float-right"><a href="#">Back to top</a></p>
+         <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Department of Software Engineering, Faculty of Electrical Engineering, University of Belgrade</p>
+      </footer>
+    </body>
+	</html>

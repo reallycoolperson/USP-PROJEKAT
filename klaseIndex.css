@@ -1,0 +1,672 @@
+  .centrirajPozadinu 
+		{
+        max-width: 100%;
+        margin: auto; 
+		background-color: white;
+         }
+		 .navbarBoja
+		 {
+		 background-color: #343A40;
+		 }
+ 
+ .mytoggler
+ { 
+	 color: black;
+ }
+ .ulN {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0;
+	  background: lightgray;
+	  z-index: 2;
+	}
+
+
+  .ulNli {
+	  display: block;
+	  position: relative;
+	  float: left;
+	  background:  #343A40;
+	  
+	   z-index: 2;
+	}
+
+	.liNul { display: none; } /*dok se ne predje misem ne pokazuj zivati ti*/
+	
+	
+	
+	.ulNlia:hover { background: gray; } /*kad se predje misem preko natpisa u osvnom navabru promjeni se boja kutijice*/
+	
+	li:hover > ul /*prikazi opstine*/
+	{
+	  display: block; /*prikazi listu*/
+	  position: absolute; /*ocajno je bez*/
+	    z-index: 2;
+	}
+	li:hover a { background: lightgray; }
+
+ 	
+	a:hover
+	{
+		color: black;
+		text-decoration:none;
+	}
+	
+ .ulNlia
+	{
+	  display: block; /* da se fino prikaze citava kutijica dje je natpis za restorane*/
+	  padding: 1em;
+	  text-decoration: none; /* white-space: nowrap; */
+	  color: black; /*boja slova u pocetnom navbaru*/
+	    z-index: 2;
+	} 
+	
+	
+
+
+	/* CAROUSEL.CSS*/
+	
+	/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+/*-----------------------------------------vertical menu*/
+	
+	.vertical-menu {
+  width: 200px; /* Set a width if you like */
+}
+
+.vertical-menu a {
+  background-color: darkgray; /* Grey background color */
+  color: gray; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+   /* Add a green color to the "active/current" link */
+  color: white;
+}
+	
+	
+	
+	/*ZA ZVJEZDICE*/
+	.rating 
+	{
+		margin-left : 300px;
+		margin-top : 100px;
+		position: relative;
+		transform : translate(-90%,-90%) rotateY(180deg);
+		display : flex;
+	}
+ .uh
+ {
+	 transform : translate(-90%,-90%) rotateY(180deg);
+ }
+
+.rating input
+	{
+		display: none;
+	}
+	.rating label
+	{
+		display: block;
+		cursor: pointer;
+		width:50px;
+		background: white;
+	}
+	.rating label:before
+	{
+		content : '\f005';
+		font-family: fontAwesome;
+		position: relative;
+		display: block;
+		font-size: 50px;
+		color: #101010;
+	}
+	
+	.rating label:after
+	{
+		content: '\f005';
+		font-family: fontAwesome;
+		position: absolute;
+		display: block;
+		font-size: 50px;
+		color: yellow;
+		top: 0;
+		opacity: 0;
+		transition : .2s;
+		text-shadow: 0 2px 5px rgba(0,0,0,.5);
+	}
+	
+		.rating label:hover,
+	    .rating input:checked~label:after
+		{
+			opacity: 1;
+			
+		}
+
+	
+	
+	
+	
+	/*    Galerija          */
+	@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+.kon-all{
+  width: fit-content;
+  margin: 20px auto;
+  height: auto;
+}
+.kon{
+  width: calc(50% - 6px);
+  overflow:hidden;
+  height: fit-content;
+  margin:3px;
+  padding: 0;
+  display:block;
+  position:relative;
+  float:left;
+}
+.slika{
+  width: 100%;
+  transition-duration: .3s;
+  max-width: 100%;
+  display:block;
+  overflow:hidden;
+  cursor:pointer;
+}
+.tajtl{
+  position:absolute;
+  display:block;
+  cursor:pointer;
+  top: 35%;
+  display: none;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.6em;
+  text-shadow: 1px 5px 10px black;
+  transition-duration: .3s;
+}
+.tekst{
+  position:absolute;
+  top: 70%;
+  cursor:pointer;
+  max-width: 80%;
+  text-align:center;
+  left: 50%;
+  text-shadow: 1px 5px 10px black;
+  font-size: 1em;
+  display:none;
+  margin-right: -50%;
+  transition-duration: .3s;
+  transform: translate(-50%, -50%) 
+}
+.kon:hover img{
+  transform: scale(1.2);
+  transition-duration: .3s;
+  filter: grayscale(50%);
+  opacity: .7;
+}
+.kon:hover span{
+  color:white;
+  display: block;
+  transition-duration: .3s;
+}
+@media only screen and (max-width: 900px) {
+    .kon {
+        width: calc(50% - 6px);
+    }
+}
+@media only screen and (max-width: 400px) {
+    .kon {
+        width: 100%;
+    }
+}
+	
+	/*Dostava, restorani rasporedjeni prije sortiranja*/
+	.slika_res
+	{
+  width: 150px;
+   height: 150px;
+}
+ 
+
+	/*RESTORAN SLIKA SA NATPISOM*/
+	.logo-name{
+    font-family: 'Satisfy', sans-serif;
+    font-size: 65px;
+    margin-top: 140px;
+    color: black;
+}
+.bg-color{
+    background-color: RGBA(0, 0, 0, 0.61);
+    min-height: 707px;
+}
+
+#banner h2{
+    font-family: 'Satisfy', sans-serif;
+    font-size: 45px;
+    color: #FFB03B;+
+}
+#banner p{
+    font-family: 'PT Sans', sans-serif;
+    color: #fcfcfc;
+    font-size: 34px;
+}
+
+.contact-icon {
+    color: #fff;
+    position: absolute;
+    left: 34px;
+    font-size: 32px;
+    margin-top: 18px;
+}
+
+.dark-blue {
+    color: #31364c;
+    font-size: 24px;
+    margin-top: 0;
+}
+.light-blue {
+    color: #9699a6;
+    font-size: 16px;
+    margin-bottom: 1px;
+}
+
+.contacts-btn {
+    background-color:  #FFB03B !important;
+    color: #ffffff !important;
+    width: 170px;
+    height: 54px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    text-transform: capitalize;
+    border: 0px;
+    color: #000 !important;
+}
+
+/*************************TIIIIIIIIIIIIM***************************/
+
+.row.heading h2 {
+    color: #fff;
+    font-size: 52.52px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 40px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.heading.heading-icon {
+    display: block;
+}
+.padding-lg {
+	display: block;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.practice-area.padding-lg {
+    padding-bottom: 55px;
+    padding-top: 55px;
+}
+.practice-area .inner{ 
+     border:1px solid #999999; 
+	 text-align:center; 
+	 margin-bottom:28px; 
+	 padding:40px 25px;
+}
+.our-webcoderskull .cnt-block:hover {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    border: 0;
+}
+.practice-area .inner h3{ 
+    color:#3c3c3c; 
+	font-size:24px; 
+	font-weight:500;
+	font-family: 'Poppins', sans-serif;
+	padding: 10px 0;
+}
+.practice-area .inner p{ 
+    font-size:14px; 
+	line-height:22px; 
+	font-weight:400;
+}
+.practice-area .inner img{
+	display:inline-block;
+}
+
+
+.our-webcoderskull{
+  background: url(fotografije/right-sider-banner.png) no-repeat center top / cover;
+  
+}
+.our-webcoderskull .cnt-block{ 
+   float:left; 
+   width:100%; 
+   background:#fff; 
+   padding:30px 20px; 
+   text-align:center; 
+   border:2px solid #d5d5d5;
+   margin: 0 0 28px;
+}
+.our-webcoderskull .cnt-block figure{
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+   display:inline-block;
+   margin-bottom: 15px;
+}
+.our-webcoderskull .cnt-block img{ 
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+}
+.our-webcoderskull .cnt-block h3{ 
+   color:#2a2a2a; 
+   font-size:20px; 
+   font-weight:500; 
+   padding:6px 0;
+   text-transform:uppercase;
+}
+.our-webcoderskull .cnt-block h3 a{
+  text-decoration:none;
+	color:#2a2a2a;
+}
+.our-webcoderskull .cnt-block h3 a:hover{
+	color:#337ab7;
+}
+.our-webcoderskull .cnt-block p{ 
+   color:#2a2a2a; 
+   font-size:13px; 
+   line-height:20px; 
+   font-weight:400;
+}
+.our-webcoderskull .cnt-block .follow-us{
+	margin:20px 0 0;
+}
+.our-webcoderskull .cnt-block .follow-us li{ 
+    display:inline-block; 
+	width:auto; 
+	margin:0 5px;
+}
+.our-webcoderskull .cnt-block .follow-us li .fa{ 
+   font-size:24px; 
+   color:#767676;
+}
+.our-webcoderskull .cnt-block .follow-us li .fa:hover{ 
+   color:#025a8e;
+}
+
+
+
+
+
+
+
+
+
+.natpis
+{
+	margin-left: 18px; 
+	margin-top : -25px;
+}
+
+
+/*TIMELINE*/
+.main-timeline4{overflow:hidden;position:relative}
+.main-timeline4:before{content:"";width:5px;height:70%;background:#333;position:absolute;top:70px;left:50%;transform:translateX(-50%)}
+.main-timeline4 .timeline-content:before,.main-timeline4 .timeline:before{top:50%;transform:translateY(-50%);content:""}
+.main-timeline4 .timeline{width:50%;padding-left:100px;float:right;position:relative}
+.main-timeline4 .timeline:before{width:20px;height:20px;border-radius:50%;background:#fff;border:5px solid #333;position:absolute;left:-10px}
+.main-timeline4 .timeline-content{display:block;padding-left:150px;position:relative}
+.main-timeline4 .timeline-content:before{width:90px;height:10px;border-top:7px dotted #333;position:absolute;left:-92px}
+.main-timeline4 .year{display:inline-block;width:120px;height:120px;line-height:100px;border-radius:50%;border:10px solid #f54957;font-size:30px;color:#f54957;text-align:center;box-shadow:inset 0 0 10px rgba(0,0,0,.4);position:absolute;top:0;left:0}
+.main-timeline4 .year:before{content:"";border-left:20px solid #f54957;border-top:10px solid transparent;border-bottom:10px solid transparent;position:absolute;bottom:-13px;right:0;transform:rotate(45deg)}
+.main-timeline4 .inner-content{padding:20px 0}
+.main-timeline4 .title{font-size:24px;font-weight:600;color:#f54957;text-transform:uppercase;margin:0 0 5px}
+.main-timeline4 .description{font-size:14px;color:#6f6f6f;margin:0 0 5px}
+.main-timeline4 .timeline:nth-child(2n){padding:0 100px 0 0}
+.main-timeline4 .timeline:nth-child(2n) .timeline-content:before,.main-timeline4 .timeline:nth-child(2n) .year,.main-timeline4 .timeline:nth-child(2n):before{left:auto;right:-10px}
+.main-timeline4 .timeline:nth-child(2n) .timeline-content{padding:0 150px 0 0}
+.main-timeline4 .timeline:nth-child(2n) .timeline-content:before{right:-92px}
+.main-timeline4 .timeline:nth-child(2n) .year{right:0}
+.main-timeline4 .timeline:nth-child(2n) .year:before{right:auto;left:0;border-left:none;border-right:20px solid #f54957;transform:rotate(-45deg)}
+.main-timeline4 .timeline:nth-child(2){margin-top:110px}
+.main-timeline4 .timeline:nth-child(odd){margin:-110px 0 0}
+.main-timeline4 .timeline:nth-child(even){margin-bottom:80px}
+.main-timeline4 .timeline:first-child,.main-timeline4 .timeline:last-child:nth-child(even){margin:0}
+.main-timeline4 .timeline:nth-child(2n) .year{border-color:#1ebad0;color:#1ebad0}
+.main-timeline4 .timeline:nth-child(2) .year:before{border-right-color:#1ebad0}
+.main-timeline4 .timeline:nth-child(2n) .title{color:#1ebad0}
+.main-timeline4 .timeline:nth-child(3n) .year{border-color:#7cba01;color:#7cba01}
+.main-timeline4 .timeline:nth-child(3) .year:before{border-left-color:#7cba01}
+.main-timeline4 .timeline:nth-child(3n) .title{color:#7cba01}
+.main-timeline4 .timeline:nth-child(4n) .year{border-color:#f8781f;color:#f8781f}
+.main-timeline4 .timeline:nth-child(4) .year:before{border-right-color:#f8781f}
+.main-timeline4 .timeline:nth-child(4n) .title{color:#f8781f}
+@media only screen and (max-width:1200px){.main-timeline4 .year{top:50%;transform:translateY(-50%)}
+}
+@media only screen and (max-width:990px){.main-timeline4 .timeline{padding-left:75px}
+.main-timeline4 .timeline:nth-child(2n){padding:0 75px 0 0}
+.main-timeline4 .timeline-content{padding-left:130px}
+.main-timeline4 .timeline:nth-child(2n) .timeline-content{padding:0 130px 0 0}
+.main-timeline4 .timeline-content:before{width:68px;left:-68px}
+.main-timeline4 .timeline:nth-child(2n) .timeline-content:before{right:-68px}
+}
+@media only screen and (max-width:767px){.main-timeline4{overflow:visible}
+.main-timeline4:before{height:100%;top:0;left:0;transform:translateX(0)}
+.main-timeline4 .timeline:before,.main-timeline4 .timeline:nth-child(2n):before{top:60px;left:-9px;transform:translateX(0)}
+.main-timeline4 .timeline,.main-timeline4 .timeline:nth-child(even),.main-timeline4 .timeline:nth-child(odd){width:100%;float:none;text-align:center;padding:0;margin:0 0 10px}
+.main-timeline4 .timeline-content,.main-timeline4 .timeline:nth-child(2n) .timeline-content{padding:0}
+.main-timeline4 .timeline-content:before,.main-timeline4 .timeline:nth-child(2n) .timeline-content:before{display:none}
+.main-timeline4 .timeline:nth-child(2n) .year,.main-timeline4 .year{position:relative;transform:translateY(0)}
+.main-timeline4 .timeline:nth-child(2n) .year:before,.main-timeline4 .year:before{border:none;border-right:20px solid #f54957;border-top:10px solid transparent;border-bottom:10px solid transparent;top:50%;left:-23px;bottom:auto;right:auto;transform:rotate(0)}
+.main-timeline4 .timeline:nth-child(2n) .year:before{border-right-color:#1ebad0}
+.main-timeline4 .timeline:nth-child(3n) .year:before{border-right-color:#7cba01}
+.main-timeline4 .timeline:nth-child(4n) .year:before{border-right-color:#f8781f}
+.main-timeline4 .inner-content{padding:10px}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--- PORTFOLIO ---*/
+.content-section .thumbnail { position: relative; overflow: hidden; cursor: pointer; }
+.content-section .thumbnail * { transition: all .25s; }
+.content-section .thumbnail h4 { font-size: 19px; font-weight: 400; }
+.content-section .thumbnail p { line-height: 24px; }
+.content-section .thumbnail:hover h4, .content-section .thumbnail:hover p { color: #AFAFAF; }
+.content-section .thumbnail:hover img { opacity: 0.25;  }
+.content-section .thumbnail:after { font-family: 'FontAwesome'; content: '\f121'; color: #FFF; font-size: 48px; line-height: 80px; top: 70%; position: absolute; text-align: center; display: inline-block; width: 100%; transition: all .35s; opacity: 0; width: 86px; height: 86px; margin-left: auto; margin-right: auto; left: 0; right: 0; border-radius: 50%; background: transparent; border:3px solid transparent; }
+.content-section .thumbnail:hover:after { top: 25%; opacity: 1; color: #FFFFFF; background: #AF6204; border:3px solid #FFFFFF; }
+
+
+#home2 {
+  background: url('fotografije/martina.png') no-repeat center center fixed;
+  background-size: cover; text-shadow: 1px 1px 0 rgba(255,255,255,0.5); text-align: center;
+}
+#home2 h1 { font-family: 'Advent Pro', sans-serif; font-size: 96px; font-weight: 400; color: #fff; display: inline-block; margin: 0; padding: 0;  margin-top: 60px; }
+#home2 h5 { font-size: 16px; color: #002259; font-weight: 600;}
+
+@media screen and (min-width: 768px) {
+  #home2 h1 { font-size: 120px; line-height: 114px; }
+  #home2 h5 { font-size: 19px; }
+}
+
+@media screen and (min-width: 992px) {
+  #home2 h1 { font-size: 132px; margin-top: 70px; }
+  #home2 h5 { font-size: 21px; }
+}
+
+@media screen and (min-width: 1200px) {
+  #home2 h1 { font-size: 142px; line-height: 124px; }
+  #home2 h5 { font-size: 24px; }
+}
+
+/**************/
+#home {
+  background: url('fotografije/maska.png') no-repeat center center fixed;
+  background-size: cover; text-shadow: 1px 1px 0 rgba(255,255,255,0.5); text-align: center;
+}
+#home h1 { font-family: 'Advent Pro', sans-serif; font-size: 96px; font-weight: 400; color: #fff; display: inline-block; margin: 0; padding: 0;  margin-top: 60px; }
+#home h5 { font-size: 16px; color: #002259; font-weight: 600;}
+
+@media screen and (min-width: 768px) {
+  #home h1 { font-size: 120px; line-height: 114px; }
+  #home h5 { font-size: 19px; }
+}
+
+@media screen and (min-width: 992px) {
+  #home h1 { font-size: 132px; margin-top: 70px; }
+  #home h5 { font-size: 21px; }
+}
+
+@media screen and (min-width: 1200px) {
+  #home h1 { font-size: 142px; line-height: 124px; }
+  #home h5 { font-size: 24px; }
+}
+
+/*--- GENERAL STYLES ---*/
+.klasa { font-size: 16px; line-height: 1.5em; font-family: 'Quattrocento Sans', sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', serif; font-weight: 700; color: #1a1a1a; }
+.content-section { min-height: 100vh; padding-top: 70px; padding-bottom: 20px; }
+.content-section h1 { color: #9C9C9C; font-weight: 400; font-size: 30px; display: inline-block; }
+.content-section h1:after { content: ''; display: block; border-bottom: 1px solid #DFDFDF; padding-top: 3px; }
+.content-section p.lead { font-family: 'Cardo', serif; font-size: 19px; line-height: 1.35em; margin-bottom: 25px; }
+.content-section p.lead em { font-size: 14px; }
+.content-section p em { font-size: 14px;}
+.content-section p mark em { font-size: inherit;}
+
+@media screen and (min-width: 768px) {
+  .content-section { padding-top: 130px; }
+  .content-section h1 { font-size: 34px; }
+  .content-section p.lead { margin-bottom: 30px; }
+}
+
+@media screen and (min-width: 992px) {
+  .content-section { padding-top: 160px; }
+  .content-section h1 { font-size: 38px; }
+  .content-section h1:after { padding-top: 5px; }
+  .content-section p.lead { font-size: 21px; margin-bottom: 35px; }
+}
+
+@media screen and (min-width: 1200px) {
+  .content-section { padding-top: 160px; }
+  .content-section h1:after { padding-top: 7px; }
+  .content-section p.lead { font-size: 22px; margin-bottom: 35px; }
+}
+
+/* Styles for wrapping the search box */
+
+
+

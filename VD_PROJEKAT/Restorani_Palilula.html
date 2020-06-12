@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html language='en'>
+ <head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title> Dostava hrane - Palilula </title>		
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="klaseIndex.css">
+	<link rel='stylesheet' type='text/css' href="klaseRestorani.css"> 
+    	<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ </head>
+ <body>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
+         <img src='fotografije/dostana2.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dobar_navbar"
+		aria-controls="dobar_navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="dobar_navbar">
+		  <ul class="ulN navbar-nav">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="index.html">Pocetna</a>
+					</li>
+					<li class="ulNli nav-item active">
+						<a class="ulNlia avisited nav-link dropdown-toggle" href="svi_restorani.html">Restorani</a>
+                         <span class="caret"></span></a> 
+                           <ul class=" ulN dropdown-menu">
+                           <li><a class="ulNlia" href="Restorani_Vracar.html">Opstina Vracar</a></li>
+                           <li><a class="ulNlia" href="Restorani_Palilula.html">Opstina Palilula</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zemun.html">Opstina Zemun</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zvezdara.html">Opstina Zvezdara</a></li>
+                            </ul>
+                   </li>
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="dostava.html">Dostava</a>
+					</li>
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="korpa.html">Korpa</a>
+					</li>
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="tim.html">O nama</a>
+					</li> 
+		  </ul>
+          <ul class="ulN navbar-nav ml-auto">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="Restorani_Palilula.html"><img src = "fotografije/srb.png" width = "40px" height = "30px"></a>
+					</li> 
+					<li class=" ulNli nav-item">
+					<a class="ulNlia nav-link" href="Restorani_Palilula_eng.html"><img src = "fotografije/eng.png" width = "40px" height = "30px"></a>
+					</li>
+		    </ul>
+        </div>
+      </nav>
+    </header> <!--kraj navbara-->
+		  <ul class="breadcrumb" style='margin-top:88px'>
+              <li class="breadcrumb-item"><a href="index.html">Pocetna</a></li>
+              <li class="breadcrumb-item active">Opstina Palilula</li>
+        </ul>
+		 <div class='container-fluid' style=' height: 750px'>
+	 <div class='row'>
+	    <div class=' offset-md-3 col-md-6' style=" background-color: lightgray;height: 125px; " > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_restaurant.png' style='float:left;margin-right:5px ; margin-top: 1px'>
+		 <h5><font color='darkblue'> <a href="Obrok.html">  Obrok - Home Made</a></font> </h5>
+		<p style='font-size:15px'><label id='lokacija1'>Dalmatinska</label></p>
+	   <p style='color:gray'> Italijanska hrana </p>
+		</div>
+	  </div>
+	  <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_misa.png' style='float:left;margin-right:5px ; margin-top: 20px'>
+		<h5> <font color='darkblue'> <a href="Misa.html">  Misa restoran</a></font> </h5>
+		  <p style='font-size:15px'><label id='lokacija2'>Mije Kovacevica</label></p>
+		   <p style='color:gray'> Domaca hrana </p>
+		</div>
+	  </div>
+	    <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_chief.png' style='float:left;margin-right:5px ; margin-top: 20px'>
+		<h5> <font color='darkblue'> <a href="Chief.html">Chief restoran</a></font> </h5>
+		  <p style='font-size:15px'> <label id='lokacija3'>Takovska 12</label></p>
+		   <p style='color:gray'> Italijanska hrana </p>
+		</div>
+	  </div>
+  </div>
+			
+ <hr class="featurette-divider"> 
+			 <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+       <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Department of Software Engineering, Faculty of Electrical Engineering, University of Belgrade</p>
+      </footer>
+ </body>
+</html>

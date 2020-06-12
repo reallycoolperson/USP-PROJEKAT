@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title> Food delivery - Chief </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="klaseIndex.css">
+	    	<!-- font awesome  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  </head>
+  <script>
+  var glob = 1;
+  function provjera()
+  {
+  
+  if (localStorage.getItem("rezultatChief") === null || localStorage.getItem("rezultatChief") == 0) 
+  {
+  localStorage.setItem("rezultatChief", "0");
+  }
+   if (localStorage.getItem("ljudiChief") === null ||  localStorage.getItem("rezultatChief") == 0) 
+  {
+  localStorage.setItem("ljudiChief", "0");
+  }
+  
+  if (localStorage.getItem("ocjenaChief") === null ||  localStorage.getItem("ocjenaChief") == 0) 
+  {
+  localStorage.setItem("ocjenaChief", "0");
+  }
+  
+   document.getElementById("pisi").innerHTML =  localStorage.getItem("ocjenaChief");
+
+  }
+  
+  function ocjeni( ocjena)
+  {
+   if(glob == 1)
+   {
+        localStorage.setItem("rezultatChief", parseInt(localStorage.getItem("rezultatChief")) + parseInt(ocjena));
+		localStorage.setItem("ljudiChief", parseInt(localStorage.getItem("ljudiChief")) + 1);
+
+		var uk = (localStorage.getItem("rezultatChief") / localStorage.getItem("ljudiChief")).toFixed('6');
+	    localStorage.setItem("ocjenaChief", uk);
+
+		 document.getElementById("pisi").innerHTML =  localStorage.getItem("ocjenaChief");
+		 
+		 glob = glob - 1;
+      }
+     
+  }
+  </script>
+  <body onload = "provjera()">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
+       <img src='fotografije/dostana2.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
+        <button class="navbar-toggler" type="button"  data-target="#dobar_navbar"
+		aria-controls="dobar_navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="dobar_navbar">
+		  <ul class="ulN navbar-nav">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="index_eng.html">Home</a>
+					</li>
+					
+					<li class="ulNli nav-item active">
+						<a class="ulNlia avisited nav-link dropdown-toggle"  href="svi_restorani_eng.html">Restaurants</a>
+                         <span class="caret"></span></a> 
+                           <ul class=" ulN dropdown-menu">
+                           <li><a class="ulNlia" href="Restorani_Vracar_eng.html"> Vracar</a></li>
+                           <li><a class="ulNlia" href="Restorani_Palilula_eng.html"> Palilula</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zemun_eng.html"> Zemun</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zvezdara_eng.html"> Zvezdara</a></li>
+                            </ul>
+                   </li>
+	
+						
+					<li class=" ulNli nav-item ">
+						<a class="ulNlia nav-link" href="dostava_eng.html">Delivery</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="korpa_eng.html">Cart</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="tim_eng.html">About us</a>
+					</li> 
+					</ul>	   
+		   <ul class="ulN navbar-nav ml-auto">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="Chief.html"><img src = "fotografije/srb.png" width = "40px" height = "30px"></a>
+					</li> 
+					
+					<li class=" ulNli nav-item">
+					<a class="ulNlia nav-link" href="Chief_eng.html">	<img src = "fotografije/eng.png" width = "40px" height = "30px"></a>
+					</li>
+		    </ul>
+        </div>
+      </nav>
+    </header> <!--kraj navbara-->
+		  <!--banner-->
+		   <style>
+  #banner{
+    background: url(fotografije/italijapozadina.jpg) no-repeat center top;
+    background-size: cover;
+    min-height: 630px;
+}
+  </style>  
+  <section id="banner">
+    <div class="bg-color">
+    
+      <div class="container">
+        <div class="row">
+          <div class="inner text-center">
+            <h1 class="logo-name">Chief restaurant </h1>
+            <h2>Feel the smell of Italy!</h2>
+            <p>Specialized in Italian cuisine!!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / banner -->
+		 <ul class="breadcrumb" style='margin-top:0px' >
+              <li class="breadcrumb-item"><a href="index_eng.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="Restorani_Palilula_eng.html"> Palilula</a></li>
+              <li class="breadcrumb-item active">Chief</li>
+			 
+        </ul>
+   <div class="container marketing"> <!--srediste sajta-->
+		<div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">The best menu <span class="text-muted"></span></h2>
+            <p class="lead">In this Restaurant you can enjoy the best specialties of our chefs, and what you should not miss is definitely some of the coolest cold specialties that give them a unique taste ...
+  </p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="fotografije/italianemenu.jpg" alt=" JELOVNIK">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading"> The best service<span class="text-muted"> </span></h2>
+            <p class="lead">  In the evening, enjoy the acoustic gig of the famous Belgrade band, and for the weekend the atmosphere knows very much to catch up. So this restaurant, except as a great Belgrade restaurant, is in the voice and as a great place to spend.
+			</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="fotografije/enterijer4.jpg"  alt="restoranslika">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 ">
+            <h2 class="featurette-heading">Visit and rate us   <span class="text-muted"> </span></h2>
+            
+			
+			<div class = "rating"> <!--zvjezdice-->
+		                      <input type = "radio" name = "star" id = "star1" onclick = "ocjeni('5')"> <label for = "star1"> </label>
+                              <input type = "radio" name = "star" id = "star2" onclick = "ocjeni('4')"> <label for = "star2"> </label>
+                              <input type = "radio" name = "star" id = "star3" onclick = "ocjeni('3')"> <label for = "star3"> </label>
+                              <input type = "radio" name = "star" id = "star4" onclick = "ocjeni('2')"> <label for = "star4"> </label>
+				     	
+						<input type = "radio" name = "star" id = "star5" onclick = "ocjeni('1')"> <label for = "star5"> </label> 
+
+					</div>
+			  <p style = "margin-top: -50px"> <strong> Rating: </strong> <p id = "pisi"> </p>  </p>
+            <p  class="lead">With its perfect menu and affordable prices, this restaurant deserves a high place in the gastronomic offer of the city. Come and make sure that quality is in the first place.
+			<address>
+           <img src = "fotografije/mail.png" width = "50px" height = "50px">  Mail:  <a href="mailto:chief@gmail.com">chief@gmail.com</a><br>
+       <img src = "fotografije/tel.png" width = "50px" height = "50px">  Phone number:  06985262626 <br>
+           <img src = "fotografije/lok.jpg" width = "50px" height = "50px">  Address: Takovska 12 <br>
+            </address>   
+		    </p>			
+	    </div>
+          <div class="col-md-5">  <!--ispod za MAPU-->
+         <div class="mapouter"><div class="gmap_canvas"><iframe width="450" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=Takovska%2012&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:600px;width:450px;}.gmap_canvas {overflow:hidden;background:none!important;height:600px;width:450px;}</style></div>
+		 </div>
+        </div>
+
+        <hr class="featurette-divider">
+		
+<div class="row featurette"> 
+
+		<div class="col-md-3 order-md-2">
+             <h2 class="featurette-heading" style='margin-top:250px'> Gallery<span class="text-muted"></span></h2>
+	     </div>
+		 <div class="col-md-9 order-md-1">
+ <section id="content"> <!--galerija-->
+	     
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<div class="kon-all"   >
+<div class="kon">
+  <img  class = "slika" src="fotografije/galerija6.jpg" alt=""  >
+</div>
+<div class="kon">
+  <img  class = "slika" src="fotografije/galerija5.jpg" alt="">
+</div>
+<div class="kon">
+  <img  class = "slika" src="fotografije/galerija4.jpg" alt="">
+
+</div>
+<div class="kon">
+  <img class = "slika" src="fotografije/galerija3.jpg" alt="">
+
+</div>
+<div class="kon">
+  <img class = "slika" src="fotografije/galerija2.jpg" alt="">
+
+</div>
+<div class="kon">
+  <img class = "slika" src="fotografije/galerija1.jpg" alt="">
+
+</div>
+</div>
+  </section> <!--kraj galerije-->
+ </div>
+</div>	
+         <hr class="featurette-divider">
+</div><!-- /.kraj  -->
+
+      <!-- FOOTER -->
+      <footer class="container">
+         <p class="float-right"><a href="#">Back to top</a></p>
+         <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Department of Software Engineering, Faculty of Electrical Engineering, University of Belgrade</p>
+      </footer>
+    </body>
+	</html>

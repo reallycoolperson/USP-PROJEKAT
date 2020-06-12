@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simptomi</title>
+
+    <!-- include VueJS first -->
+    <script src="https://unpkg.com/vue@latest"></script>
+    <!-- use the latest vue-select release -->
+    <script src="https://unpkg.com/vue-select@latest"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="klaseIndex.css">
+	    	<!-- font awesome  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  
+</head>
+<body>
+    <div id="app">
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
+       <img src='slike/logo.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dobar_navbar" aria-controls="dobar_navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="dobar_navbar">
+		  <ul class="ulN navbar-nav">
+					<li class=" ulNli nav-item ">
+						<a class="ulNlia nav-link" href="pacijent.html">Pocetna</a>
+					</li>
+					<li class="ulNli nav-item active">
+					   <a class="ulNlia nav-link" href="pacijent.html">Simptomi</a>
+                   </li>
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="dostava.html">Istorija</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="korpa.html">Uputi</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="korpa.html">Analize</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="tim.html">O meni</a>
+					</li> 
+					</ul>	
+
+ <ul class="ulN navbar-nav ml-auto">
+					
+					<li class=" ulNli nav-item">
+					<a class="ulNlia nav-link" href="login.html">	Odjavite se</a>
+					</li>
+		    </ul>
+					
+		  
+        </div>
+      </nav>
+ 
+
+		  <!--banner-->
+		   <style>
+  #banner{
+    background: url(slike/stetoskop.jpg) no-repeat center top;
+    background-size: cover;
+    min-height: 707px;
+}
+  </style>  
+  <section id="banner">
+    <div class="bg-color">
+    
+      <div class="container">
+        <div class="row">
+          <div class="inner text-center">
+          
+
+ 
+        <main class="py-4">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div style='margin-top:200px; 	color: black; width: 600px;  height: 400px; margin-left: -170px;' class="card">
+                <div class="card-header" style =" background:rgba(0,0,0,0.3);" ><b>Forma za popunjavanje simptoma</b></div>
+
+                <div class="card-body"  style =" background:rgba(0,0,0,0.3);">
+                    <form>
+                        <br>
+
+                        <div class="form-group row">
+                            <label for="datum" class="col-md-4 col-form-label text-md-right">Datum: </label>
+ 
+                            <div class="col-md-6">
+                                <input id="datum" type="date" class="form-control" name="datum" required autocomplete="datum" autofocus >
+
+                                
+                            </div>
+                        </div>
+<br>
+
+                        <div class="form-group row">
+                            <label for="symptoms" class="col-md-4 col-form-label text-md-right">Simptomi</label>
+
+                            <div class="col-md-6">
+                                <div id="selectMunicipalityContainer" >
+                                    <v-select multiple :options="muncipalities"  v-model="selected"  @selected="changedLabel">
+                                        <template >
+                                            <input
+                                                class="vs__search"
+                                                :required="!selected"
+                                            >
+                                        </template>
+										
+                                    </v-select>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+
+                       
+                    
+                      
+
+                       <br><br>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-3">
+                                <button type="submit" class="btn btn-light" onclick = "dijagnoza()">
+                                    Posalji na analizu
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	 
+		  </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+        </main>
+    </div>
+	    <script>
+                            Vue.component('v-select', VueSelect.VueSelect)
+                        
+                            new Vue({
+                                el: '#selectMunicipalityContainer',
+                                data: {
+                                    selected: '',
+                                    muncipalities: ['povisena temperatura', 'suv kasalj' , 'umor', 'otezano disanje', 'bol u grudima', 'zacepljen nos', 'kasalj', 'bol u grlu', 'bol u misicima', 'kijanje', 'gubitak apetita']
+                                }
+							})
+							
+							
+							
+
+                            
+							
+							
+							function dijagnoza()
+							{
+				window.open("dijagnoza.html");
+							}
+							
+                        </script>
+	  
+   <hr>
+      <!-- FOOTER -->
+      <footer class="container">
+         <p class="float-right"><a href="#">Back to top</a></p>
+         <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</p>
+      </footer>
+   
+</body>
+</html>

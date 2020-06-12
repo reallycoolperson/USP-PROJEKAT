@@ -1,0 +1,15 @@
+.okvir
+{
+	margin-top: 5px;
+	background-color: lightgray;
+	height: 125px;
+	
+
+}
+.divclass {
+  white-space: nowrap; /*da ne prelazi u novi red kad se smanji ekram*/
+  overflow: hidden;
+ text-overflow: ellipsis;
+
+}
+

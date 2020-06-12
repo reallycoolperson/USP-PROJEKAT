@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html language='en'>
+ <head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title> Food delivery - Restaurants </title>		
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="klaseIndex.css">
+	<link rel='stylesheet' type='text/css' href="klaseRestorani.css"> 
+	<link rel='stylesheet' type='text/css' href="pretraga.css"> 
+
+    	<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+	  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+
+<!-- za fa-fa search-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ </head>
+ <body>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
+       <img src='fotografije/dostana2.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dobar_navbar"
+		aria-controls="dobar_navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="dobar_navbar">
+		  <ul class="ulN navbar-nav">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="index_eng.html">Home</a>
+					</li>
+					<li class="ulNli nav-item active">
+						<a class="ulNlia avisited nav-link dropdown-toggle" href="svi_restorani_eng.html">Restaurants</a>
+                         <span class="caret"></span></a> 
+                           <ul class=" ulN dropdown-menu">
+                           <li><a class="ulNlia" href="Restorani_Vracar_eng.html"> Vracar</a></li>
+                           <li><a class="ulNlia" href="Restorani_Palilula_eng.html"> Palilula</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zemun_eng.html"> Zemun</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zvezdara_eng.html"> Zvezdara</a></li>
+                            </ul>
+                   </li>	
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="dostava_eng.html">Delivery</a>
+					</li>
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="korpa_eng.html">Cart</a>
+					</li>
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="tim_eng.html">About us</a>
+					</li> 
+		  </ul>
+           <ul class="ulN navbar-nav ml-auto">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="svi_restorani.html"><img src = "fotografije/srb.png" width = "40px" height = "30px"></a>
+					</li> 
+					<li class=" ulNli nav-item">
+					<a class="ulNlia nav-link" href="svi-restorani_eng.html"><img src = "fotografije/eng.png" width = "40px" height = "30px"></a>
+					</li>
+		    </ul>
+        </div>
+      </nav>
+    </header>
+	
+		  <ul class="breadcrumb" style='margin-top:88px'>
+              <li class="breadcrumb-item"><a href="index_eng.html">Home</a></li>
+              <li class="breadcrumb-item active">Restaurants</li>
+        </ul>
+		
+		
+		
+		<script> 
+		 var meal =  "<div class='row'>"+
+	 "  <div class=' offset-md-3 col-md-6 okvir'   > "+
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_restaurant.png' style='float:left;margin-right:5px ; margin-top: 1px'>"+
+		 "<h5><font color='darkblue'> <a href='Obrok_eng.html'> Restaurant Meal</a></font> </h5> "+
+		"<p style='font-size:15px'><label id='lokacija1'>Dalmatinska</label></p> " +
+	   "<p style='color:gray'> Italian food </p> " +
+		"</div> " +
+	 " </div>" ;
+	 
+	   var misa =  	 " <div class='row'> "+
+	   " <div class='offset-md-3 col-md-6 okvir' > " +
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_misa.png' style='float:left;margin-right:5px ; margin-top: 20px'>"+
+		"<h5> <font color='darkblue'> <a href='Misa_eng.html'>  Misa restaurant</a></font> </h5>"+
+		  "<p style='font-size:15px'><label id='lokacija2'>Mije Kovacevica</label></p>"+
+		   "<p style='color:gray'> Traditional food </p>"+
+		"</div>"+
+	  "</div>" ;
+	 
+	 var chief =   "<div class='row'>"+
+	 "  <div class=' offset-md-3 col-md-6 okvir'  > "+
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_chief.png' style='float:left;margin-right:5px ; margin-top: 1px'>"+
+		 "<h5><font color='darkblue'> <a href='Chief_eng.html'> Chief restaurant</a></font> </h5> "+
+		"<p style='font-size:15px'><label id='lokacija1'>Takovska 12</label></p> " +
+	   "<p style='color:gray'> Italian food</p> " +
+		"</div> " +
+	 " </div>" ;  
+	 
+	 var wendy =  "<div class='row'>"+
+	 "  <div class=' offset-md-3 col-md-6 okvir'  > "+
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_wendy.png' style='float:left;margin-right:5px ; margin-top: 1px'>"+
+		 "<h5><font color='darkblue'> <a href='Wendy_eng.html'> Wendy's restaurant</a></font> </h5> "+
+		"<p style='font-size:15px'><label id='lokacija1'>Juzni Bulevar 12</label></p> " +
+	   "<p style='color:gray'> Traditional food</p> " +
+		"</div> " +
+	 " </div>" ;  
+	 
+	 var donald =    
+	  "<div class='row'>"+
+	   "<div class='offset-md-3 col-md-6 okvir' >"+
+		 "<img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_mcdonalds.jpg' style='float:left;margin-right:5px ; margin-top: 23px'>"+
+		 "<h5><font color='darkblue'> <a href='McDonalds_eng.html'> McDonald's</a></font> </h5>"+
+		  "<p style='font-size:15px'> Resavska 73</p>"+
+		  "<p style='color:gray'> Fast food </p>"+
+		"</div>"+
+	  "</div>";
+	 
+	 var kuja =  "<div class='row'>"+
+	 "  <div class=' offset-md-3 col-md-6 okvir'  > "+
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_kuya.png' style='float:left;margin-right:5px ; margin-top: 1px'>"+
+		 "<h5><font color='darkblue'> <a href='KuyaJ_eng.html'>Kuya J restaurant</a></font> </h5> "+
+		"<p style='font-size:15px'><label id='lokacija1'> Prvomajska 23</label></p> " +
+	   "<p style='color:gray'> Mexican food</p> " +
+		"</div> " +
+	 " </div>" ;  
+	 
+	 var hugo = "<div class='row'>"+
+	 "  <div class=' offset-md-3 col-md-6 okvir'  > "+
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_hugos.png' style='float:left;margin-right:5px ; margin-top: 1px'>"+
+		 "<h5><font color='darkblue'> <a href='Hugos_eng.html'>Hugo's restaurant</a></font> </h5> "+
+		"<p style='font-size:15px'><label id='lokacija1'> Dimitrija Tucovica</label></p> " +
+	   "<p style='color:gray'> Mexican food</p> " +
+		"</div> " +
+	 " </div>" ; 
+	 
+		 var gabriel =  "<div class='row'>"+
+	 "  <div class=' offset-md-3 col-md-6 okvir'  > "+
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_gabriel.png' style='float:left;margin-right:5px ; margin-top: 1px'>"+
+		 "<h5><font color='darkblue'> <a href='Gabriel_eng.html'>Gabriel restaurant</a></font> </h5> "+
+		"<p style='font-size:15px'><label id='lokacija1'> Prvomajska 23</label></p> " +
+	   "<p style='color:gray'> Traditional food</p> " +
+		"</div> " +
+	 " </div>" ;  
+	 
+	 var sushi = "<div class='row'>"+
+	 "  <div class=' offset-md-3 col-md-6 okvir'  > "+
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_sushi.png' style='float:left;margin-right:5px ; margin-top: 1px'>"+
+		 "<h5><font color='darkblue'> <a href='Sushi_eng.html'>Sushi restaurant</a></font> </h5> "+
+		"<p style='font-size:15px'><label id='lokacija1'>  Bulevar Kralja Aleksandra 127</label></p> " +
+	   "<p style='color:gray'>  Chineese food </p> " +
+		"</div> " +
+	 " </div>" ; 
+	 
+	 var vegan = "<div class='row'>"+
+	 "  <div class=' offset-md-3 col-md-6 okvir'  > "+
+		" <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_vegan.png' style='float:left;margin-right:5px ; margin-top: 1px'>"+
+		 "<h5><font color='darkblue'> <a href='Vegan_eng.html'>Vegan restaurant</a></font> </h5> "+
+		"<p style='font-size:15px'><label id='lokacija1'> Ustanicka</label></p> " +
+	   "<p style='color:gray'> Vegan food</p> " +
+		"</div> " +
+	 " </div>" ; 
+	 
+		function trazi()
+		{
+		 var x = document.getElementById("rijec").value;
+		 
+		 if (x== "Meal" || x == "meal")
+          document.getElementById('pisi').innerHTML = meal;
+		  
+		   else if (x== "Misa" || x == "misa")
+          document.getElementById('pisi').innerHTML = misa;
+		 
+		   else if (x== "Chief" || x == "chief")
+          document.getElementById('pisi').innerHTML = chief;
+		  
+		   else if (x== "mcdonald" || x == "McDonald" || x == "Mcdonald")
+          document.getElementById('pisi').innerHTML = donald;
+		  
+		  else if (x== "Wendy" || x == "wendy" || x=="vendi" || x=="wendi")
+          document.getElementById('pisi').innerHTML = wendy;
+		  
+		   else if (x== "Kuya" || x == "kuya" || x == "kuyaJ" || x == "KuyaJ" || x=="kuyaj")
+          document.getElementById('pisi').innerHTML = kuja;
+		  
+		   else if (x== "Hugo" || x == "hugo")
+          document.getElementById('pisi').innerHTML = hugo;
+		  
+		   else if (x== "Gabriel" || x == "gabriel")
+          document.getElementById('pisi').innerHTML = gabriel;
+		  
+		    else if (x== "Sushi" || x == "sushi" || x == "susi")
+          document.getElementById('pisi').innerHTML = sushi;
+
+          else if (x== "Vegan" || x == "vegan")
+          document.getElementById('pisi').innerHTML = vegan;
+		  
+		  else if (x=="Vracar" || x == "vracar")
+		  document.getElementById('pisi').innerHTML = wendy + donald;
+		  
+		   else if (x=="Palilula" || x == "palilula")
+		  document.getElementById('pisi').innerHTML = meal + misa + chief; 
+		  
+		  else if (x=="Zemun" || x == "zemun")
+		  document.getElementById('pisi').innerHTML = kuja + gabriel; 
+		  
+		   else if (x=="Zvezdara" || x == "zvezdara")
+		  document.getElementById('pisi').innerHTML = hugo + sushi + vegan; 
+		  
+		  else if(isNaN(x) == false)
+		  {
+		  br = parseInt(x);
+
+		  var uk = "";
+		  var ocj = localStorage.getItem("ocjenaKuya"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + kuja;
+		  
+		  ocj = localStorage.getItem("ocjenaObrok"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + meal;
+		  
+		   ocj = localStorage.getItem("ocjenaMisa"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + misa;
+		  
+		   ocj = localStorage.getItem("ocjenaHugo"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + hugo;
+		  
+		   ocj = localStorage.getItem("ocjenaWendy"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + wendy;
+		  
+		   ocj = localStorage.getItem("ocjenaSushi"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + sushi;
+		  
+		   ocj = localStorage.getItem("ocjenaGabriel"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + gabriel;
+		  
+		   ocj = localStorage.getItem("ocjenaMcdonalds"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + donald;
+		  
+	
+          ocj = localStorage.getItem("ocjenaChief"); 
+		  if (ocj!= null && br == parseInt(ocj) )
+		  uk = uk + chief;
+		  document.getElementById('pisi').innerHTML = uk; 
+          }
+		  
+		
+		}
+		</script>
+
+		
+		
+
+		
+		  <div class='row'>
+	    <div class='offset-md-3 col-md-6 ' >	
+  <div class="input-group search">
+    <input type="text" class="form-control" placeholder="Search..." id = "rijec">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="button" onclick = "trazi()">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+  </div>	
+  </div>	
+  
+  
+		 <div class='container-fluid' style = "margin-top: 20px"  id= "pisi">
+		 		
+	 <div class='row'>
+	    <div class=' offset-md-3 col-md-6' style=" background-color: lightgray;height: 125px; " > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_restaurant.png' style='float:left;margin-right:5px ; margin-top: 1px'>
+		 <h5><font color='darkblue'> <a href="Obrok_eng.html"> Meal</a></font> </h5>
+		<p style='font-size:15px'><label id='lokacija1'>Dalmatinska</label></p>
+	   <p style='color:gray'> Italian food </p>
+		</div>
+	  </div>
+	  
+	  <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_misa.png' style='float:left;margin-right:5px ; margin-top: 20px'>
+		<h5> <font color='darkblue'> <a href="Misa_eng.html">  Misa </a></font> </h5>
+		  <p style='font-size:15px'><label id='lokacija2'>Mije Kovacevica</label></p>
+		   <p style='color:gray'> Traditional food </p>
+		</div>
+	  </div>
+	  
+	    <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_chief.png' style='float:left;margin-right:5px ; margin-top: 20px'>
+		<h5> <font color='darkblue'> <a href="Chief_eng.html"><label id='ime3'>Chief </label></a></font> </h5>
+		  <p style='font-size:15px'> <label id='lokacija3'>Takovska 12</label></p>
+		   <p style='color:gray'> Italian food </p>
+		</div>
+	  </div>
+	  
+	   <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_wendy.png' style='float:left;margin-right:5px ; margin-top: 20px'>
+		<h5><font color='darkblue'> <a href="Wendy_eng.html"> Wendy's </a></font> </h5>
+		  <p style='font-size:15px'> Juzni Bulevar 12</p>
+		 <p style='color:gray'> Traditional food </p>
+		</div>
+	  </div> 
+	  
+	  <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_mcdonalds.jpg' style='float:left;margin-right:5px ; margin-top: 23px'>
+		 <h5><font color='darkblue'> <a href="McDonalds_eng.html"> McDonald's</a></font> </h5>
+		  <p style='font-size:15px'> Resavska 73</p>
+		  <p style='color:gray'> Fast food </p>
+		</div>
+	  </div>
+	  
+	   <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_kuya.png' style='float:left;margin-right:5px ;margin-top: 15px'>
+		<h5><font color='darkblue'><a href="KuyaJ_eng.html">Kuya J  </a></font></h5>
+		  <p style='font-size:15px'> Prvomajska 23</p>
+		   <p style='color:gray'> Mexican food</p>
+		</div>
+	  </div>
+	  
+	  <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_gabriel.png' style='float:left;margin-right:5px ;margin-top: 15px'>
+		<h5><font color='darkblue'><a href="Gabriel_eng.html"> Gabriel</a></font></h5>
+		  <p style='font-size:15px'> Prvomajska 23</p>
+		   <p style='color:gray'> Traditional food</p>
+		</div>
+	  </div>
+	  
+	    <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_hugos.png' style='float:left;margin-right:5px ;margin-top: 10px'>
+		 <h5><font color='darkblue'><a href="Hugos_eng.html"> Hugo's </a></font>  </h5> 
+		 <p style='font-size:15px'> Dimitrija Tucovica</p>
+		   <p style='color:gray'> Mexican food </p>
+		</div>
+	  </div>
+	  <div class='row'>
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img  class='img-fluid centriranaSlika' width='100px' height='100px' src='fotografije/Restorani_sushi.png' style='float:left;margin-right:5px ; margin-top: 10px '>
+		 <h5><font color='darkblue'> <a href="Sushi_eng.html">Sushi  </a></font></h5>
+		  <p style='font-size:15px'> Bulevar Kralja Aleksandra 127</p>
+		 <p style='color:gray'> Chineese food </p>
+	
+		</div>
+	  </div>
+	  <div class='row' >
+	    <div class='offset-md-3 col-md-6 okvir' > 
+		 <img class='img-fluid' width='100px' height='100px' src='fotografije/Restorani_vegan.png' style='float:left;margin-right:5px ; margin-top: 5px'>
+		<h5><font color='darkblue'> <a href="Vegan_eng.html">Vegan </a></font> </h5>
+		  <p style='font-size:15px'> Ustanicka</p>
+		   <p style='color:gray'> Vegan food </p>
+		</div>
+	  </div>
+  </div>
+
+
+
+
+
+  	
+<center>
+    <a href="https://herbafast.com/en/">
+  <img src="fotografije/banner.jpg" alt="herbafast" style="width:1012px;height:200px;border:0;margin-top:50px">
+</a>
+  </center>
+	
+	<hr>
+			 <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+       <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Department of Software Engineering, Faculty of Electrical Engineering, University of Belgrade</p>
+      </footer>
+ </body>
+</html>

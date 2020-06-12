@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title> Dostava hrane - McDonald's </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="klaseIndex.css">
+    <link rel="stylesheet" type='text/css' href="HranaCSS.css">
+    	<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> <!--za pdf-->
+ <script language="JavaScript">
+ function naruci()
+ {
+  var racun=0;  
+                if(document.forma.ime.value!="")
+				   {
+					if(document.forma.prezime.value!="")
+					  {
+						if(document.forma.email.value!="")
+						  {
+							var regex = /^[a-zA-Z0-9-\.]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/; // moze test1223@test.com.fssgdsg464.ktrey645.6563.65.6.546.54
+							if(regex.test(document.forma.email.value))
+							   {
+								if(document.forma.telefon.value!="")
+							   {
+									var regex = /^\d{3}\/\d{3}-\d{2}-\d{2}$/;
+									if(regex.test(document.forma.telefon.value))
+									    { 
+										 if(document.forma.adrstanovanja.value!="")
+										 {
+										  // SALJI NARUDZBINU
+										  if (document.getElementById('customCheck1').checked) { racun=racun + parseInt(document.getElementById("cijena1").innerText);}
+										  if (document.getElementById('customCheck2').checked) { racun=racun + parseInt(document.getElementById("cijena2").innerText); }
+										  if (document.getElementById('customCheck3').checked) { racun=racun + parseInt(document.getElementById("cijena3").innerText); }
+										  if (document.getElementById('customCheck4').checked) { racun=racun + parseInt(document.getElementById("cijena4").innerText); }
+										  if (document.getElementById('customCheck5').checked) { racun=racun + parseInt(document.getElementById("cijena5").innerText); }
+										  if (document.getElementById('customCheck6').checked) { racun=racun + parseInt(document.getElementById("cijena6").innerText); }
+										  if (document.getElementById('customCheck7').checked) { racun=racun + parseInt(document.getElementById("cijena7").innerText); }
+										  if (document.getElementById('customCheck8').checked) { racun=racun + parseInt(document.getElementById("cijena8").innerText); }
+										  if (document.getElementById('customCheck9').checked) { racun=racun + parseInt(document.getElementById("cijena9").innerText); }
+										  
+										  document.getElementById("popuni").innerHTML="Racun:"+ racun + "rsd";
+										  
+										  var datum= new Date();
+										  
+										  var PDFstring=datum.getDate() + ". " + (datum.getMonth()+1) + ". " + datum.getFullYear() + ". \n" + "McDonald's " + racun;
+										  
+										 if (localStorage.getItem("i") ===null || localStorage.getItem("i") == 0  )
+										  {
+										   localStorage.setItem("i","0");
+										   }
+										    
+										    var trenutnaNarudzbina = parseInt(localStorage.getItem("i"))+1;
+										  
+										  localStorage.setItem("i", trenutnaNarudzbina);
+										  
+										  var stringTrenutnaN= trenutnaNarudzbina.toString();
+										  
+										  localStorage.setItem(stringTrenutnaN, PDFstring);
+										  
+										 }
+										 else {document.getElementById("popuni").innerHTML="<font color='red'> Popunite sva polja</font>"; }
+									    }
+									else{document.getElementById("popuni").innerHTML="<font color='red'>Telefon nije u dobrom formatu</font>";}
+								}
+								else{document.getElementById("popuni").innerHTML="<font color='red'> Popunite sva polja</font>";}
+							}
+							else{document.getElementById("popuni").innerHTML="<font color='red'>Mejl nije u dobrom formatu</font>";}
+						}
+						else{document.getElementById("popuni").innerHTML="<font color='red'> Popunite sva polja</font>";}
+					}
+					else{document.getElementById("popuni").innerHTML="<font color='red'> Popunite sva polja</font>";}
+				}
+				else {document.getElementById("popuni").innerHTML="<font color='red'> Popunite sva polja</font>";}
+ }
+ </script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
+         <img src='fotografije/dostana2.png' height='120px' width='150px' alt='Logo'> 		<!-- logo -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dobar_navbar" 
+		aria-controls="dobar_navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="dobar_navbar">
+		  <ul class="ulN navbar-nav">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="index.html">Pocetna</a>
+					</li>
+					<li class="ulNli nav-item ">
+						<a class="ulNlia avisited nav-link dropdown-toggle" href="svi_restorani.html">Restorani</a>
+                         <span class="caret"></span></a> 
+                           <ul class=" ulN dropdown-menu">
+                           <li><a class="ulNlia" href="Restorani_Vracar.html">Opstina Vracar</a></li>
+                           <li><a class="ulNlia" href="Restorani_Palilula.html">Opstina Palilula</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zemun.html">Opstina Zemun</a></li>
+                           <li><a class="ulNlia" href="Restorani_Zvezdara.html">Opstina Zvezdara</a></li>
+                            </ul>
+                   </li>
+	
+						
+					<li class=" ulNli nav-item active">
+						<a class="ulNlia nav-link" href="dostava.html">Dostava</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="korpa.html">Korpa</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="tim.html">O nama</a>
+					</li> 
+		  </ul>
+		  
+		  
+		  
+		   <ul class="ulN navbar-nav ml-auto">
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="McDonalds_Hrana.html"><img src = "fotografije/srb.png" alt='SRB' width = "40px" height = "30px"></a>
+					</li> 
+					
+					<li class=" ulNli nav-item">
+					<a class="ulNlia nav-link" href="McDonalds_Hrana_eng.html">	<img src = "fotografije/eng.png" alt='ENG' width = "40px" height = "30px"></a>
+					</li>
+		    </ul>
+ 
+
+        </div>
+      </nav>
+    </header> <!--kraj navbara-->
+	
+       <ul class="breadcrumb" style='margin-top:87px'>
+              <li class="breadcrumb-item"><a href="index.html">Pocetna</a></li>
+              <li class="breadcrumb-item"><a href="dostava.html">Dostava</a></li>
+              <li class="breadcrumb-item active"> McDonald's</li>
+			 
+        </ul>
+		<div class='container' style="margin-bottom:10px">
+		   <div class='row'>
+		   <div class='offset-md-2 col-md-2'>
+	<div class="gallery">
+    <img class='galleryImg'src="fotografije/mek1.jpg" alt="slika" >
+  <div class="desc"> <label id='cijena1'>330</label>rsd
+  
+  <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1">Izaberite</label>
+</div>
+  
+  
+  </div>
+</div>
+	</div>
+	<div class='offset-md-1 col-md-2'>
+	<div class="gallery">	
+	
+        <img class='galleryImg'src="fotografije/mek2.jpg" alt="slika"> 
+ 
+  <div class="desc">
+<label id='cijena2'>200</label>rsd
+ <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck2" > 
+  <label class="custom-control-label" for="customCheck2"> Izaberite </label> <!--KADA KLIKNES NA TEKST ONO CEKIRA-->	
+ 
+</div>
+ </div>
+ 
+</div>
+	</div>
+	
+	<div class='offset-md-1 col-md-2'>
+	<div class="gallery">
+    <img class='galleryImg'src="fotografije/mek3.jpg" alt="slika">
+  <div class="desc"><label id='cijena3'>170</label>rsd
+  
+  <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck3"> 
+  <label class="custom-control-label" for="customCheck3"> Izaberite </label>	
+ 
+</div>
+  
+  
+  
+  </div>
+</div>
+	</div>
+	
+	
+	</div>
+	<div class='row'>
+	
+	
+	<div class='offset-md-2 col-md-2'>
+	<div class="gallery">
+    <img class='galleryImg'src="fotografije/mek4.jpg" alt="slika" >
+  <div class="desc"><label id='cijena4'>260</label>rsd
+  
+  <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck4"> 
+  <label class="custom-control-label" for="customCheck4"> Izaberite </label> 
+ 
+</div>
+  
+  </div>
+</div>
+	</div>
+	<div class='offset-md-1 col-md-2'>
+	<div class="gallery">
+    <img class='galleryImg'src="fotografije/mek5.jpg" alt="slika" >
+  <div class="desc"><label id='cijena5'>150</label>rsd
+  
+  <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck5"> 
+  <label class="custom-control-label" for="customCheck5"> Izaberite </label> 
+ 
+</div>
+  
+  </div>
+</div>
+	</div>
+	
+	<div class='offset-md-1 col-md-2'>
+	<div class="gallery">
+    <img class='galleryImg'src="fotografije/mek6.jpg" alt="slika">
+  <div class="desc"> <label id='cijena6'>210</label>rsd
+  <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck6"> 
+  <label class="custom-control-label" for="customCheck6"> Izaberite </label> 
+ 
+</div>
+  
+  
+  </div>
+</div>
+	</div>
+	
+	
+	</div>
+	<div class='row'>
+	
+	<div class='offset-md-2 col-md-2'>
+	<div class="gallery">
+    <img class='galleryImg'src="fotografije/mek7.jpg" alt="slika">
+  <div class="desc"><label id='cijena7'>260</label>rsd
+   <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck7"> 
+  <label class="custom-control-label" for="customCheck7"> Izaberite </label> 
+ 
+</div>
+  
+  </div>
+</div>
+	</div>
+	<div class='offset-md-1 col-md-2'>
+	<div class="gallery">
+    <img class='galleryImg'src="fotografije/mek8.jpg" alt="slika">
+  <div class="desc"> <label id='cijena8'>320</label>rsd
+   <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck8"> 
+  <label class="custom-control-label" for="customCheck8"> Izaberite </label> 
+ 
+</div>
+  
+  </div>
+</div>
+	</div>
+	<div class='offset-md-1 col-md-2'>
+	<div class="gallery">
+    <img class='galleryImg' src="fotografije/mek9.jpg" alt="slika" >
+  <div class="desc"> <label id='cijena9'>199</label>rsd
+   <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck9"> 
+  <label class="custom-control-label" for="customCheck9"> Izaberite </label> 
+ 
+</div>
+  </div>
+</div>
+	</div>
+	
+</div>
+
+<hr style='margin-top:30px'>
+
+<div class='row' style='margin-top:30px; text-align: left;'>
+ <div class='offset-md-2 col-md-8' >
+   <form name='forma'>
+    <p style='text-align:center'> Popunite formu:</p>
+
+  <div class="form-group">
+    <label for="ime">Ime:</label>  <input type="text" name='ime' class="form-control"> 
+  </div>
+
+
+  <div class="form-group">
+    <label for="prezime">Prezime:</label>
+    <input type="text" class="form-control" name="prezime">
+  </div>
+
+ <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control"  name="email">
+  </div>
+ 
+  <div class="form-group">
+    <label for="telefon">Broj telefona:</label>
+    <input type="text" placeholder="XXX/XXX-XX-XX"  class="form-control" name="telefon">
+  </div>
+
+ 
+
+  <div class="form-group">
+    <label for="adrstanovanja">Adresa stanovanja:</label>
+    <input type="text" class="form-control"  name="adrstanovanja">
+  </div>
+
+
+   <input type='button' id='dugme' class="btn btn-primary btn-lg" onClick="naruci()" value="Naruci">
+</form>   
+ <label style='margin-top:10px' id='popuni'></label> 
+
+
+ </div>
+</div>
+
+
+    </div>	
+      
+	  <!-- FOOTER -->
+	   <hr class="featurette-divider"> 
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+       <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</p>
+      </footer>
+ 
+ </body>
+ </html>
