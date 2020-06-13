@@ -3,19 +3,90 @@
 		<title> E-Zdravlje Login </title>
 		<link rel="stylesheet" href="stil.css">
 	</head>
+	
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-<body background='slike/pozadina.jpg'>
+<script>
+
+function baza()
+{ 
+var usernames = [];
+usernames[0] = "pero";
+usernames[1] = "doktor";
+localStorage.setItem("usernames", JSON.stringify(usernames));
+var passwords = [];
+passwords[0] = "pero123";
+passwords[1] = "doktor123";
+localStorage.setItem("passwords", JSON.stringify(passwords));
+
+var uloge = [];
+uloge[0] = "pacijent";
+uloge[1] = "doktor";
+localStorage.setItem("uloge", JSON.stringify(uloge));
+/*var storedNames = JSON.parse(localStorage.getItem("usernames"));
+alert(storedNames[0]);*/
+}
+
+
+function uloguj()
+{
+document.getElementById('poruka_username').innerHTML = "";
+document.getElementById('poruka_password').innerHTML = "";
+
+var username = document.getElementById('ime').value;
+var password = document.getElementById('password').value;
+var storedUsernames= JSON.parse(localStorage.getItem("usernames"));
+var nadjen = -1;
+for(var i = 0; i < storedUsernames.length; i++)
+{
+if(username == storedUsernames[i]) nadjen = i;
+}
+
+if(nadjen > -1)
+{
+var storedPasswords = JSON.parse(localStorage.getItem("passwords"));
+var praviPassword = storedPasswords[nadjen];
+if(praviPassword == password) 
+{
+      var uloge = JSON.parse(localStorage.getItem("uloge"));
+      var uloga = uloge[nadjen];
+	  if(uloga == "pacijent")
+	  window.open("pacijent.html");
+	  else if (uloga == "doktor")
+	  window.open("doktor.html");
+}
+else 
+{
+document.getElementById('poruka_username').innerHTML = "";
+document.getElementById('poruka_password').innerHTML = "Unijeli ste pogresnu lozinku";
+}
+}
+
+else
+{
+document.getElementById('poruka_username').innerHTML = "Unijeli ste pogresno korisnicko ime";
+document.getElementById('poruka_password').innerHTML = "";
+document.getElementById('password').value = "";
+
+}
+}
+</script>
+
+<body background='slike/pozadina.jpg' onload = "baza()" >
 	<div class="loginBox">
 
 		<img src="slike/logo.png" class="user">
 		<div > <center> <h1 > <font color = "#0f7986"> <b>E-Zdravlje</b> </font> </h1> </center> </div>
 		<form>
-			<input type="text" name = "ime" required="required" placeholder="Korisnicko ime">
-			<input type="password" name = "password" required="required" placeholder="Lozinka">
+			<input type="text" id = "ime" name = "ime" required="required" placeholder="Korisnicko ime">
+			<label style = "color: red; font-size: 13px;" id = "poruka_username"></label>
+			<input type="password" id = "password" name = "password" required="required" placeholder="Lozinka">
+		  <label style = "color: red; font-size: 13px;" id = "poruka_password"></label>
+
 			<br><br>
 			
-			<input type="submit" value="Uloguj se">
+			<input class="dugme" value="&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Uloguj se" onclick = "uloguj()">
 			 <center>
 			 <div>  <a style = "color:rgba(255,255,255,0.5); font-family:none;" href="zaboravljena_lozinka.html"> Zaboravili ste lozinku? </a> 
 			 </div>

@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title> Pacijent </title>
+   <title> Uputi </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type='text/css' href="klaseIndex.css">
 	    	<!-- font awesome  -->
@@ -15,59 +15,10 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
- 
- <script>
- function ucitaj()
- {
-  var el = document.getElementById("gif_tableta");
-    el.innerHTML="<img src='slike/crvena.gif'  style = 'width: 300px; height: 300px;'>";
-    setTimeout(gif, 3000);
-  
-	
- }
-
-var value=localStorage["dijagnoza"];
-var simptomi=localStorage["simptomi"];
-
-// var value = localStorage.getItem('dijagnoza');
- function gif()
-{
- var el = document.getElementById("gif_tableta");
- var dijagnoza="";
- var el2 = document.getElementById("dijagnoza");
-
- if (value ==1) dijagnoza="prehlada";
- else if (value ==2) dijagnoza="covid-19";
- else if (value == 0) dijagnoza="gripa";
- if(value == 1 || value == 2 || value == 0 )
- {
- var string2 =  "<p><a class='btn btn-lg btn-info' href='#' role='button'  data-toggle='modal' data-target='#zakazi'>Zakazite</a></p>";
- dijagnoza = dijagnoza  + string2;
- }
- var procenat=Math.round(10 + Math.random()*90);
-var string =  "";
-if (value==-1 || dijagnoza== ""){ string =  "<h4 class='logo-name' style='font-size:50px' > Dijagnoza nije odredjena zbog nedostatka dovoljno informacija </h4>";}
-else string =  "<h5 class='logo-name' style='font-size:50px' > Sa vjerovatnocom od "+ procenat + "% dijagnoza je: "+ dijagnoza +" </h5>";
-    el.innerHTML = "";
-	el2.innerHTML= string;
-	//localStorage.clear();
-}
-
-
-
-function zakazi()
-{
- var el1 = document.getElementById("dijagnoza");
- var el2 = document.getElementById("naslov");
- el2.innerHTML = "";
- el1.innerHTML = "<h5 class='logo-name' style='font-size:50px' > " + "Vas zahtjev je poslat na razmatranje. "+ "</h5>";
-}
-
-
- </script>
   </head>
-  <body  onload = "ucitaj()">
+  <body >
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
        <img src='slike/logo.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
@@ -76,17 +27,17 @@ function zakazi()
         </button>
         <div class="collapse navbar-collapse" id="dobar_navbar">
 		  <ul class="ulN navbar-nav">
-					<li class=" ulNli nav-item ">
+					<li class=" ulNli nav-item">
 						<a class="ulNlia nav-link" href="pacijent.html">Pocetna</a>
 					</li>
-					<li class="ulNli nav-item active">
+					<li class="ulNli nav-item ">
 					   <a class="ulNlia nav-link" href="simptomi.html">Simptomi</a>
                    </li>
 					<li class=" ulNli nav-item">
 						<a class="ulNlia nav-link" href="istorija.html">Istorija</a>
 					</li>
 					
-					<li class=" ulNli nav-item">
+					<li class=" ulNli nav-item active">
 						<a class="ulNlia nav-link" href="uputi.html">Uputi</a>
 					</li>
 					
@@ -118,58 +69,89 @@ function zakazi()
     min-height: 707px;
 }
   </style>  
-  <section id="banner">
-    <div class="bg-color">
+  <section style = "background: url(slike/slika.jpg) no-repeat center top; background-size: cover;  min-height: auto;">
+    <div style = "background-color: rgba(0, 0, 0, 0.61); min-height: auto;">
     
-      <div class="container">
-        <div class="row">
-          <div class="inner text-center">
-		
-            <h1 class="logo-name" id = "naslov" > Analiza simptoma </h1>
-			<br> <br>
-			<div id = "gif_tableta"></div>
-			<div id = "dijagnoza" style = "margin-top: -120px;"></div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- / banner -->
-  
-  
-  
-  <!--- modal -->
-  
-  <div style = "margin-top: 140px;"  class="modal fade" id="zakazi" tabindex="-1" role="dialog" aria-labelledby="zakazi" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Zakazivanje</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <b> Da li zelite da zakazete termin kod vaseg izabranog ljekara? </b><br>
-      <br>
-	            <form role="form">
+	<center>
+      <div class="container" >
+	  <br> <br> <br> 
+	  
+	  <!--    <div class="card" style="width: 38rem;">
+  <div class="card-body">
+    <h5 class="card-title"> Podnesite novi zahtjev</h5>
+	<br>
+       <form role="form">
 
 	    <div class="form-group">
-             <!-- <label for="poruka"><span class="glyphicon glyphicon-envelope"></span> <b> Detaljnije o simptomima:</b></label>----->
+              <label for="poruka"><span class="glyphicon glyphicon-envelope"></span> <b> Detaljnije o simptomima:</b></label>
              <textarea class = "form-control" id='poruka' style="min-width: 100%"  placeholder="Opisite detaljnije vase simptome(opciono)" ></textarea>
        </div>
 	   		<i>(u sekciji uput nakon sto ljekar pogleda vas zahtjev dobicete zakazan termin ili cete dobiti upit kod specijaliste)</i>
 
 	   </form>
-	   </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Otkazi</button>
-        <button type="button" class="btn btn-primary" onclick = "zakazi()" data-dismiss="modal">Posalji</button>
-      </div>
-    </div>
+    <br>
+  </div>
+</div>-->
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+      <div class="card" style="width: 38rem; margin-top: 100px;">
+  <div class="card-body">
+   <h5 class="card-title"> Uput za ocnog ljekara</h5>
+   <br>
+    <h6 class="card-subtitle mb-2 text-muted" > Datum: 03.06.2020. </h6>
+	<h6 class="card-subtitle mb-2 text-muted"> Vrijeme: 08:30 </h6>
+	<h6 class="card-subtitle mb-2 text-muted">Mjesto: Treci sprat, prostorija 38 </h6>
+    <h6 class="card-subtitle mb-2 text-muted">Specijalista: Miroljub Mandic </h6>
+	<br>
+    <p class="card-text"><u> <i>Napomena:</i></u>   <i>Na osnovu poslatih simptoma, zakljuceno je da morate da posjetite specijalistu ocnih bolesti. </i></p>
+
   </div>
 </div>
+<br>
+<br>
+
+      <div class="card" style="width: 38rem;">
+  <div class="card-body">
+    <h5 class="card-title"> Zakazano kod opsteg ljekara</h5>
+	<br>
+     <h6 class="card-subtitle mb-2 text-muted">Datum: 10.06.2020. </h6>
+	 <h6 class="card-subtitle mb-2 text-muted">Vrijeme: 10:30 </h6>
+	 <h6 class="card-subtitle mb-2 text-muted">Mjesto: Prvi sprat, prostorija 3 </h6>
+	 <h6 class="card-subtitle mb-2 text-muted">Izabrani ljekar: Jovana Milovic </h6>
+<br>
+    <p class="card-text"><u> <i>Napomena:</i></u>  <i>Na osnovu poslatih simptoma, zakljuceno je da morate na detaljniju analizu. </i></p>
+  </div>
+</div>
+<br>
+<br>
+      <div class="card" style="width: 38rem;">
+  <div class="card-body">
+    <h5 class="card-title"> Uput za vadjenje krvne slike</h5>
+	<br>
+     <h6 class="card-subtitle mb-2 text-muted">Datum: 14.06.2020. </h6>
+	 <h6 class="card-subtitle mb-2 text-muted">Vrijeme: 07:10 </h6>
+	 <h6 class="card-subtitle mb-2 text-muted">Mjesto: 6 sprat, prostorija 41a </h6>
+	 <h6 class="card-subtitle mb-2 text-muted">Medicinska sestra: Isidora Radmilovic </h6>
+        <br>
+    <p class="card-text"><u> <i>Napomena:</i></u>  <i>Na osnovu pregleda 10.06.2020, zakljuceno da je neophodan izvjestaj krvne slike. </i></p>
+  </div>
+</div>
+<br>
+<br>
+
+
+
+      </div>
+	  </center>
+    </div>
+  </section>
+	  
+  <!-- / banner -->
    <hr>
       <!-- FOOTER -->
       <footer class="container">
