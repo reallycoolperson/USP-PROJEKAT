@@ -22,8 +22,41 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  
+
+     <script>
+                       
+							function dijagnoza()
+							{
+							var value=-1; // 0=gripa, 1=prehlada, 2=covid
+							var gripa=0;
+							var prehlada=0;
+							var covid=0;
+							var symptoms= simptomi.selected.toString();
+			//				alert(symptoms);
+																
+							if (symptoms.includes("gubitak apetita") ) {gripa++; value=0; }
+							if (symptoms.includes("zacepljen nos") ) { prehlada++; }
+							if (symptoms.includes("kijanje") ) {prehlada++; }
+							if (symptoms.includes("bol u grlu") ) {prehlada++; }
+							if (symptoms.includes("bol u misicima") ) {prehlada++; }
+							if (symptoms.includes("umor") ) {covid++; }
+							if (symptoms.includes("suv kasalj") ) { value=2; covid++;}
+							if (symptoms.includes("povisena temperatura") ) {covid++; }
+							if (symptoms.includes("otezano disanje") ) {covid++; }
+							
+							if (prehlada>0) {value=1;}
+							if (gripa>0) {value=0;}
+							if (covid>0) {value=2;}
+							if (value==0 && covid>0 && prehlada>0) {value=1;} // znamo da nema suv kasalj jer je value==0
+							if ((prehlada>0 || covid>0 ) && value==2) {value=2;}
+							if (value=0 && (covid==0)) {value=0;}
+							
+							localStorage["dijagnoza"] = value;
+//localStorage.setItem('dijagnoza', value); 							
+				window.open("dijagnoza.html");
+							}
+							
+ </script>
 </head>
 <body>
     <div id="app">
@@ -38,7 +71,7 @@
 						<a class="ulNlia nav-link" href="pacijent.html">Pocetna</a>
 					</li>
 					<li class="ulNli nav-item active">
-					   <a class="ulNlia nav-link" href="pacijent.html">Simptomi</a>
+					   <a class="ulNlia nav-link" href="simptomi.html">Simptomi</a>
                    </li>
 					<li class=" ulNli nav-item">
 						<a class="ulNlia nav-link" href="dostava.html">Istorija</a>
@@ -114,21 +147,36 @@
 
                             <div class="col-md-6">
                                 <div id="selectMunicipalityContainer" >
-                                    <v-select multiple :options="muncipalities"  v-model="selected"  @selected="changedLabel">
-                                        <template >
+                                    <v-select multiple :options="muncipalities"  v-model="selected" >
+                                        <template #search="{attributes, events}" >
                                             <input
                                                 class="vs__search"
                                                 :required="!selected"
+												 v-bind="attributes"
+                                                v-on="events"
                                             >
                                         </template>
 										
                                     </v-select>
                                     
+                                    <input type="hidden" name="symptoms"  id="symptoms" :value="selected">
                                 </div>
 
                             </div>
                         </div>
-
+<script>
+     Vue.component('v-select', VueSelect.VueSelect)
+                        
+							  var simptomi = new Vue({
+										el: '#selectMunicipalityContainer',
+										data: { selected: '',
+												muncipalities: ['povisena temperatura', 'suv kasalj' , 'umor', 'otezano disanje',
+																'zacepljen nos', 'bol u grlu', 'bol u misicima', 'kijanje',
+																'gubitak apetita']
+                            
+											  }
+													});
+</script>
                        
                     
                       
@@ -156,29 +204,7 @@
 
         </main>
     </div>
-	    <script>
-                            Vue.component('v-select', VueSelect.VueSelect)
-                        
-                            new Vue({
-                                el: '#selectMunicipalityContainer',
-                                data: {
-                                    selected: '',
-                                    muncipalities: ['povisena temperatura', 'suv kasalj' , 'umor', 'otezano disanje', 'bol u grudima', 'zacepljen nos', 'kasalj', 'bol u grlu', 'bol u misicima', 'kijanje', 'gubitak apetita']
-                                }
-							})
-							
-							
-							
-
-                            
-							
-							
-							function dijagnoza()
-							{
-				window.open("dijagnoza.html");
-							}
-							
-                        </script>
+	 
 	  
    <hr>
       <!-- FOOTER -->
