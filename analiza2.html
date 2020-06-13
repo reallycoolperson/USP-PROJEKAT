@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Analize </title>
+
+    <!-- include VueJS first -->
+    <script src="https://unpkg.com/vue@latest"></script>
+    <!-- use the latest vue-select release -->
+    <script src="https://unpkg.com/vue-select@latest"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vue-select@latest/dist/vue-select.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type='text/css' href="klaseIndex.css">
+	    	<!-- font awesome  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+
+     <script>
+							
+ </script>
+</head>
+<body>
+    <div id="app">
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
+       <img src='slike/logo.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dobar_navbar" aria-controls="dobar_navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="dobar_navbar">
+		  <ul class="ulN navbar-nav">
+					<li class=" ulNli nav-item ">
+						<a class="ulNlia nav-link" href="pacijent.html">Pocetna</a>
+					</li>
+					<li class="ulNli nav-item">
+					   <a class="ulNlia nav-link" href="simptomi.html">Simptomi</a>
+                   </li>
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="dostava.html">Istorija</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="korpa.html">Uputi</a>
+					</li>
+					
+					<li class=" ulNli nav-item active">
+						<a class="ulNlia nav-link" href="analize.html">Analize</a>
+					</li>
+					
+					<li class=" ulNli nav-item">
+						<a class="ulNlia nav-link" href="tim.html">O meni</a>
+					</li> 
+					</ul>	
+
+ <ul class="ulN navbar-nav ml-auto">
+					
+					<li class=" ulNli nav-item">
+					<a class="ulNlia nav-link" href="login.html">	Odjavite se</a>
+					</li>
+		    </ul>
+					
+		  
+        </div>
+      </nav>
+ 
+ 
+ <section style = "background: url(slike/laboratory.jpg) no-repeat center top; background-size: cover;  min-height: auto;">
+    <div style = "background-color: rgba(0, 0, 0, 0.61); min-height: auto;">
+    
+      <div class="container" >
+	  <br> <br> <br> 
+      <div class="card" style="width: 38rem; margin-top: 100px;">
+  <div class="card-body">
+    <h5 class="card-title"> Rezulatati analize urina</h5>
+    <h6 class="card-subtitle mb-2 text-muted">16.09.2019.</h6>
+    <p class="card-text">
+	<table table-striped table-dark>
+	<tr>
+	<th>
+	Karakteristike
+	</th>
+	<th>
+	&nbsp; &nbsp;&nbsp;Parametri
+	</th>
+	<th>
+	&nbsp; &nbsp;&nbsp;Rezultat
+	</th>
+	<th>
+	&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Jedinice
+	</th>
+	</tr>
+	
+	
+	<tr>
+     <td> <b>Izgled</b></td>
+	<td>&nbsp; &nbsp;&nbsp;Lako zamucen</td>
+	<td>&nbsp; &nbsp;&nbsp;bistar</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; - </td>
+	</tr>
+	
+	<tr>
+     <td> <b>Boja</b></td>
+	 <td>&nbsp; &nbsp;&nbsp;zuta</td>
+	<td>&nbsp; &nbsp;&nbsp;svijetlo zuta</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; -</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>pH</b></td>
+	<td>&nbsp; &nbsp;&nbsp;6.5</td>
+	<td>&nbsp; &nbsp;&nbsp;4.5-8.0</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;1</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>rel. opt.gust</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;1.020</td>
+	<td>&nbsp; &nbsp;&nbsp;1.003-1.040</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;1</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>Glukoza</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;arb.jed.</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>Bjelancevine</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;pozitivan(1)</td>
+	<td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;arb.jed.</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>Ketonska tijela</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;arb.jed.</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>UrobilinogenS</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;normalan(1)</td>
+	<td>&nbsp; &nbsp;&nbsp;normalan(1)</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;E.J.</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>Bilirubin</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;arb.jed.</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>Krv i krv. pigmenti</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;arb.jed.</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>Nitriti</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;arb.jed.</td>
+	</tr>
+	
+	<tr>
+	     <td> <b>Leukociti</b></td>
+		 <td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp;negativan(0)</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;arb.jed.</td>
+	</tr>
+	
+	
+	<tr>
+	     <td> <b>Sediment(mikroskop)</b></td>
+		 <td>&nbsp; &nbsp;&nbsp; 5 leukocita, 3 svjeza eritrocia, malo bakterija</td>
+	<td>&nbsp; &nbsp;&nbsp;leukociti 0-5; eritrociti 0-2</td>
+	<td>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;vidno polje</td>
+	</tr>
+
+	</table>
+	
+	</p>
+    <a href="analize.html" class="card-link">Nazad</a>
+  </div>
+</div>
+<br>
+ 
+
+
+
+      </div>
+    </div>
+  </section>
+	  
+	  
+	  
+	
+   <hr>
+      <!-- FOOTER -->
+      <footer class="container">
+         <p class="float-right"><a href="#">Back to top</a></p>
+         <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</p>
+      </footer>
+   
+</body>
+</html>
