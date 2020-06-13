@@ -24,11 +24,33 @@
 		  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
 
      <script>
-                       
+	 var br=0;
+						function ucitaj()
+						{
+						if (localStorage['brBolesti'] != null && localStorage['brBolesti'] != 0)
+						{
+						var tabela=document.getElementById('tabela');
+						for (var i=0; i<localStorage['brBolesti'];i++)
+						{
+					   tabela.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ localStorage[i+1]+"'  disabled><br>";
+                       }
+						}
+						}
+						
+                       function dodaj()
+					   {
+					   var dijagnoza= document.getElementById('bolest').value;
+					   var tabela=document.getElementById('tabela');
+					   tabela.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ dijagnoza+"'  disabled><br>";
+                                 br++;
+					   localStorage['brBolesti']=br; //da ih sve ispise
+					   localStorage[br]=dijagnoza;
+						
+					   }
 							
  </script>
 </head>
-<body>
+<body onload='ucitaj()'>
     <div id="app">
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
        <img src='slike/logo.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
@@ -94,83 +116,43 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div style='margin-top:200px; 	color: black; width: 600px;  height: 400px; margin-left: -170px;' class="card">
-                <div class="card-header" style =" background:rgba(0,0,0,0.3);" ><b>Forma za popunjavanje simptoma</b></div>
+            <div style='margin-top:100px; 	color: black; width: 800px;  height: 600px; margin-left: 30px;' class="card">
+                <div class="card-header" style =" background:rgba(0,0,0,0.3);" ><b>Istorija bolesti vase porodice i vas</b></div>
 
                 <div class="card-body"  style =" background:rgba(0,0,0,0.3);">
-                    <form>
-                        <br>
-
-                        <div class="form-group row">
-                            <label for="datum" class="col-md-4 col-form-label text-md-right">Datum: </label>
- 
-                            <div class="col-md-6">
-                                <input id="datum" type="date" class="form-control" name="datum" required autocomplete="datum" autofocus >
-
-                                
-                            </div>
-                        </div>
-<br>
-
-                        <div class="form-group row">
-                            <label for="symptoms" class="col-md-4 col-form-label text-md-right">Simptomi</label>
-
-                            <div class="col-md-6">
-                                <div id="selectMunicipalityContainer" >
-                                    <v-select multiple :options="muncipalities"  v-model="selected" >
-                                        <template #search="{attributes, events}" >
-                                            <input
-                                                class="vs__search"
-                                                :required="!selected"
-												 v-bind="attributes"
-                                                v-on="events"
-                                            >
-                                        </template>
-										
-                                    </v-select>
-                                    
-                                    <input type="hidden" name="symptoms"  id="symptoms" :value="selected">
-                                </div>
-
-                            </div>
-                        </div>
-<script>
-     Vue.component('v-select', VueSelect.VueSelect)
+                    <form id='tabela'>
                         
-							  var simptomi = new Vue({
-										el: '#selectMunicipalityContainer',
-										data: { selected: '',
-												muncipalities: ['povisena temperatura', 'suv kasalj' , 'umor', 'otezano disanje',
-																'zacepljen nos', 'bol u grlu', 'bol u misicima', 'kijanje',
-																'gubitak apetita']
-                            
-											  }
-													});
-</script>
-                       
-                    
-                      
 
-                       <br><br>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-3">
-                                <button type="submit" class="btn btn-light" onclick = "dijagnoza()">
-                                    Posalji na analizu
-                                </button>
-                            </div>
-                        </div>
+                       
+
+                       
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 	 
 		  </div>
         </div>
+		
+		
       </div>
     </div>
   </section>
+<div class="card" style="width: 800px; margin-top: 20px;margin-left: 375px;">
+  <div class="card-body">
+    <h5 class="card-title"> Unesite podatke o bolesti </h5> 
+    <input type='text' class='form-control' id="bolest" name="bolest" placeholder="Dijagnoza"  enabled><br>
+     
+      <button type="submit" style="margin-left:690px" class="btn btn-info"  onclick = "dodaj()">
+                                    Dodaj
+                                </button>                                 
+
+  </div>
+</div>
+  
 
         </main>
     </div>

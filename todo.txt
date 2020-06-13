@@ -1,7 +1,6 @@
 //to do
 
 marti:
-istorija (unositi podatke o porodici, bolestima)
 
 marija:
 uputi,  nova forma za zakazivanje termina
