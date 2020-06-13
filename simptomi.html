@@ -49,7 +49,7 @@
 							if (covid>0) {value=2;}
 							if (value==0 && covid>0 && prehlada>0) {value=1;} // znamo da nema suv kasalj jer je value==0
 							if ((prehlada>0 || covid>0 ) && value==2) {value=2;}
-							if (value=0 && (covid==0)) {value=0;}
+							if (value==0 && (covid==0)) {value=0;}
 							
 							localStorage["dijagnoza"] = value;
 //localStorage.setItem('dijagnoza', value); 							
