@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simptomi</title>
+    <title>O meni</title>
 
     <!-- include VueJS first -->
     <script src="https://unpkg.com/vue@latest"></script>
@@ -25,36 +25,6 @@
 
      <script>
                        
-							function dijagnoza()
-							{
-							var value=-1; // 0=gripa, 1=prehlada, 2=covid
-							var gripa=0;
-							var prehlada=0;
-							var covid=0;
-							var symptoms= simptomi.selected.toString();
-			//				alert(symptoms);
-																
-							if (symptoms.includes("gubitak apetita") ) {gripa++; value=0; }
-							if (symptoms.includes("zacepljen nos") ) { prehlada++; }
-							if (symptoms.includes("kijanje") ) {prehlada++; }
-							if (symptoms.includes("bol u grlu") ) {prehlada++; }
-							if (symptoms.includes("bol u misicima") ) {prehlada++; }
-							if (symptoms.includes("umor") ) {covid++; }
-							if (symptoms.includes("suv kasalj") ) { value=2; covid++;}
-							if (symptoms.includes("povisena temperatura") ) {covid++; }
-							if (symptoms.includes("otezano disanje") ) {covid++; }
-							
-							if (prehlada>0) {value=1;}
-							if (gripa>0) {value=0;}
-							if (covid>0) {value=2;}
-							if (value==0 && covid>0 && prehlada>0) {value=1;} // znamo da nema suv kasalj jer je value==0
-							if ((prehlada>0 || covid>0 ) && value==2) {value=2;}
-							if (value==0 && (covid==0)) {value=0;}
-							
-							localStorage["dijagnoza"] = value;
-//localStorage.setItem('dijagnoza', value); 							
-				window.open("dijagnoza.html");
-							}
 							
  </script>
 </head>
