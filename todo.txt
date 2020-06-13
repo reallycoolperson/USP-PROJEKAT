@@ -1,14 +1,10 @@
 //to do
 
 marti:
-o meni (unositi podatke o porodici, o stanovanju, bolestima, porodicni ljekar)
-istorija
-
+istorija (unositi podatke o porodici, bolestima)
 
 marija:
 uputi,  nova forma za zakazivanje termina
-analize
-
 
 ==============================
 analiza -> zakazivanje termina
