@@ -1,6 +1,5 @@
 LJEKAR:
-pocetna(vodi na zahtjeve ili pregled)---MARTINA,
- zahtjevi(vodi na upute) ---MARIJA, 
+pzahtjevi(vodi na upute) ---MARIJA, 
  uput(forma, dva dugmeta, prepisite uput i zakazite)--MARIJA, 
  pregled(upise br. zdravstvene, prikaze se istorija, unosi simptome, dugme da li zeli vjerovatnocu li sam da prepise dijagnozu),--MARIJA
  recepti (posebno za ljekove propisane, dugme posalji pamti se u localhostu) --MARTINA
