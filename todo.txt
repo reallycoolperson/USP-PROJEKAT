@@ -1,8 +1,11 @@
-NAVBAR - MARTINA
 LJEKAR:
-navbar: pocetna(vodi na zahtjeve ili pregled)---MARTINA, zahtjevi(vodi na upute) ---MARIJA, uput(forma, dva dugmeta, prepisite uput i zakazite)--MARIJA, pregled(upise br. zdravstvene, prikaze se istorija, unosi simptome, dugme da li zeli vjerovatnocu li sam da prepise dijagnozu),--MARIJA recepti (posebno za ljekove propisane, dugme posalji pamti se u localhostu) --MARTINA
-
+pocetna(vodi na zahtjeve ili pregled)---MARTINA,
+ zahtjevi(vodi na upute) ---MARIJA, 
+ uput(forma, dva dugmeta, prepisite uput i zakazite)--MARIJA, 
+ pregled(upise br. zdravstvene, prikaze se istorija, unosi simptome, dugme da li zeli vjerovatnocu li sam da prepise dijagnozu),--MARIJA
+ recepti (posebno za ljekove propisane, dugme posalji pamti se u localhostu) --MARTINA
 PACIJENT:
-dijagnoze(posebno porodica i osoba) i recepti: skine u pdf receptu //na kraju  --MARTINA
+istorija (dijagnoze posebno porodica i osoba) --MARTINA MARIJA
+recepti: skine u pdf receptu //na kraju  --MARTINA
 
-login.html--
+login.html-- MARIJA
