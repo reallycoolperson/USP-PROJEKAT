@@ -47,6 +47,16 @@
 					   localStorage[br]=dijagnoza;
 						
 					   }
+					    function dodajporodica()
+					   {
+					   var dijagnoza= document.getElementById('bolestporodica').value;
+					   var tabela=document.getElementById('tabelaporodica');
+					   tabela.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ dijagnoza+"'  disabled><br>";
+//                                 br++;
+//					   localStorage['brBolesti']=br; //da ih sve ispise
+//					   localStorage[br]=dijagnoza;
+						
+					   }
 							
  </script>
 </head>
@@ -108,26 +118,27 @@
   </style>  
   <section id="banner">
     <div class="bg-color">
-    
       <div class="container">
-        <div class="row">
-          <div class="inner text-center">
-          
-
- 
-        <main class="py-4">
-
-<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div style='margin-top:100px; 	color: black; width: 800px;  height: 600px; margin-left: 30px;' class="card">
-                <div class="card-header" style =" background:rgba(0,0,0,0.3);" ><b>Istorija bolesti vase porodice i vas</b></div>
+        <div class="col-md-1">
+            <div style='margin-top:100px; 	color: black; width: 600px;  height: 600px;margin-left:-250px;' class="card">
+                <div class="card-header" style =" background:rgba(0,0,0,0.3);" ><b>Istorija bolesti</b></div>
 
                 <div class="card-body"  style =" background:rgba(0,0,0,0.3);">
-                    <form id='tabela'>
-                        
-
+                    <form id='tabela'>		
+						<input type='text' class='form-control' name='izbor'  value="Dijagnoza: Lumbalna diskus hernija"  disabled><br>
                        
+                    </form>
+                </div>
+            </div>
+        </div>
+		 <div class="col-md-8">
+            <div style='margin-top:100px; 	color: black; width: 600px;  height: 600px;margin-left:350px;' class="card">
+                <div class="card-header" style =" background:rgba(0,0,0,0.3);" ><b>Istorija bolesti vase porodice</b></div>
+
+                <div class="card-body"  style =" background:rgba(0,0,0,0.3);">
+                    <form id='tabelaporodica'>
+                         <input type='text' class='form-control'  value= "Dijagnoza: Skolioza" disabled><br>
 
                        
                     </form>
@@ -135,15 +146,8 @@
             </div>
         </div>
     </div>
-</div>
-
-	 
-		  </div>
-        </div>
-		
-		
       </div>
-    </div>
+   
   </section>
 <div class="card" style="width: 800px; margin-top: 20px;margin-left: 375px;">
   <div class="card-body">
@@ -156,9 +160,17 @@
 
   </div>
 </div>
-  
+<div class="card" style="width: 800px; margin-top: 20px;margin-left: 375px;">
+  <div class="card-body">
+    <h5 class="card-title"> Unesite podatke o bolesti vase porodice </h5> 
+    <input type='text' class='form-control' id="bolestporodica" name="bolest" placeholder="Dijagnoza"  enabled><br>
+     
+      <button type="submit" style="margin-left:690px" class="btn btn-info"  onclick = "dodajporodica()">
+                                    Dodaj
+                                </button>                                 
 
-        </main>
+  </div>
+</div>  
     </div>
 	 
 	  
