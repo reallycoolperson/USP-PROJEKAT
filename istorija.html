@@ -27,13 +27,24 @@
 	 
 						function ucitaj()
 						{
-						if (localStorage['brBolesti'] != null && localStorage['brBolesti'] != 0)
+						  var k=localStorage.getItem("ulogovan_knjizica");
+	 
+						if (localStorage[k+'_bolest'] != null && localStorage[k+'_bolest'] != 0)
 						{
 						var tabela=document.getElementById('tabela');
-						for (var i=0; i<localStorage['brBolesti'];i++)
+						for (var i=1; i<=localStorage[k+'_bolest'];i++)
 						{
-					   tabela.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ localStorage[i+1]+"'  disabled><br>";
-                       }
+					   tabela.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ localStorage[k+"_bolest_"+i]+"'  disabled><br>";
+						}
+						}
+						
+						if (localStorage[k+'_bolestporodica'] != null && localStorage[k+'_bolestporodica'] != 0)
+						{
+						var tabelaporodica=document.getElementById('tabelaporodica');
+						for (var i=1; i<=localStorage[k+'_bolestporodica'];i++)
+						{
+					   tabelaporodica.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ localStorage[k+"_bolestporodica_"+i]+"'  disabled><br>";
+						}
 						}
 						}
 						
@@ -52,10 +63,12 @@
 					   }
 					    function dodajporodica()
 					   {
+					     var k=localStorage.getItem("ulogovan_knjizica");
+	 
 					   var dijagnoza= document.getElementById('bolestporodica').value;
 					   var tabela=document.getElementById('tabelaporodica');
 					   tabela.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ dijagnoza+"'  disabled><br>";
-					   localStorage[k+'_bolestporodica']=parseInt(localStorage[k+'_bolest'])+1; 
+					   localStorage[k+'_bolestporodica']=parseInt(localStorage[k+'_bolestporodica'])+1; 
 					   var br=localStorage[k+'_bolestporodica'];
 					   localStorage[k+"_bolestporodica_"+br]=dijagnoza;
 						
