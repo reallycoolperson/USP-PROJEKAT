@@ -13,6 +13,28 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
+  
+  <script>
+  function posalji()
+  {
+  
+  if(document.getElementById('dijagnoza').value == "" || document.getElementById('dijagnoza').value == "")
+  {
+  					   document.getElementById('poslato2').innerHTML = "Unesite nedostajuci podatak";
+
+  }
+  else
+  {
+                       var k = document.getElementById('broj').value;
+					   var dijagnoza = document.getElementById('dijagnoza').value;
+                       localStorage[k+'_bolest']=parseInt(localStorage[k+'_bolest'])+1; 
+					   var br=localStorage[k+'_bolest'];
+					   localStorage[k+"_bolest_"+br]=dijagnoza;
+					   document.getElementById('poslato2').innerHTML = "Dijagnoza uspjesno poslata na nalog pacijenta";
+  }
+  }
+  
+  </script>
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" > <!--navbar-->
@@ -54,17 +76,57 @@
       </nav>
     </header> <!--kraj navbara-->
 	
+		 <section style = "background: url(slike/pregled.jpg) no-repeat center top; background-size: cover;  min-height: 707px;  width: 100%;">
+    <div style = "background-color: rgba(0, 0, 0, 0.61); min-height: 707px;">
 	
+	<br><br><br>
+   <div class="card" style="width: 48rem; margin-top: 100px; margin-left: 290px">
+  <div class="card-body">
+    <center><h5 class="card-title"> Pregled pacijenta</h5></center>
+    <p class="card-text"> 
+	<form id = "uput2">
 	
-	
-    <main role="main">
-	
-		
-		        <hr class="featurette-divider">
+  
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Broj zdravstvene: </label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="broj" placeholder="Unesite broj zdravstvene knjizice">
+  </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Dijagnoza: </label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="dijagnoza" placeholder="Unesite dijagnozu">
+  </div>
+  </div>
+   
+ 
+</form>
+	</p>
+<center>
+<div id = "dugmes">
+	 <button type='submit' class='btn btn-info' onclick = 'posalji()'>Posalji dijagnozu</button> &nbsp; &nbsp; &nbsp;
+</div>
 
-        <!-- /END THE FEATURETTES -->
+</center>
+
+    <p class="card-text text-danger" id = "poslato2" > 
+</p>
+	
+	
+	
+	
+  </div>
+</div>
+</div>
+
+<br>
+<br>
+<br>
       </div><!-- /.container -->
-	  
+	</div>
+</section>	
       <!-- FOOTER -->
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>

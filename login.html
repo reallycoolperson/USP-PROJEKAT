@@ -90,16 +90,16 @@ uloge[1] = "doktor";
 uloge[2] = "pacijent";
 localStorage.setItem("uloge", JSON.stringify(uloge));
 localStorage.setItem("ulogovan_id", '0');
-localStorage["2459111_recept"]=0;
-localStorage["2454131_recept"]=0;
-localStorage["3216821_recept"]=0;
+if(localStorage.getItem("2459111_recept") === null) localStorage["2459111_recept"]=0;
+if(localStorage.getItem("2454131_recept") === null) localStorage["2454131_recept"]=0;
+if(localStorage.getItem("3216821_recept") === null) localStorage["3216821_recept"]=0;
 
-localStorage["2459111_bolest"]=0;
-localStorage["2454131_bolest"]=0;
-localStorage["3216821_bolest"]=0;
-localStorage["2459111_bolestporodica"]=0;
-localStorage["2454131_bolestporodica"]=0;
-localStorage["3216821_bolestporodica"]=0;
+if(localStorage.getItem("2459111_bolest") === null) localStorage["2459111_bolest"]=0;
+if(localStorage.getItem("2454131_bolest") === null) localStorage["2454131_bolest"]=0;
+if(localStorage.getItem("3216821_bolest") === null) localStorage["3216821_bolest"]=0;
+if(localStorage.getItem("2459111_bolestporodica") === null) localStorage["2459111_bolestporodica"]=0;
+if(localStorage.getItem("2454131_bolestporodica") === null) localStorage["2454131_bolestporodica"]=0;
+if(localStorage.getItem("3216821_bolestporodica") === null) localStorage["3216821_bolestporodica"]=0;
 
 //default
 
