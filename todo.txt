@@ -1,24 +1,8 @@
-//to do
+NAVBAR - MARTINA
+LJEKAR:
+navbar: pocetna(vodi na zahtjeve ili pregled)---MARTINA, zahtjevi(vodi na upute) ---MARIJA, uput(forma, dva dugmeta, prepisite uput i zakazite)--MARIJA, pregled(upise br. zdravstvene, prikaze se istorija, unosi simptome, dugme da li zeli vjerovatnocu li sam da prepise dijagnozu),--MARIJA recepti (posebno za ljekove propisane, dugme posalji pamti se u localhostu) --MARTINA
 
-marti:
+PACIJENT:
+dijagnoze(posebno porodica i osoba) i recepti: skine u pdf receptu //na kraju  --MARTINA
 
-marija:
-uputi,  nova forma za zakazivanje termina
-
-==============================
-analiza -> zakazivanje termina
-u local storage (po jednog korisnika da se moze ulogovati)
-==============================
-ljekar
--
--
--
--
--
-==============================
-moderator
--
-==============================
-admin
--
-==============================
+login.html--
