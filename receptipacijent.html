@@ -32,24 +32,26 @@
    var pdf = new jsPDF();
    	 var pdfstring=niz[br];
 	 pdf.text(pdfstring,50,50);
-	 pdf.save('racun.pdf');	
+	 pdf.save('recept.pdf');	
   }
   
   var niz=new Array();
   function pisi()
   {  
-    if (localStorage.getItem("i") ===null || localStorage.getItem("i") == 0  )
+  var k=localStorage.getItem("ulogovan_knjizica");
+  
+    if (localStorage.getItem(k+"_recept") ===null || localStorage.getItem(k+"_recept") == 0  )
 	  {
 	    document.getElementById("tekst").innerHTML="<center>Nemate jos nijedan propisan recept!</center> <hr>";
 	  }
 	else
    {	
-	var ukupno= localStorage.getItem("i");
+	var ukupno= localStorage.getItem(k+"_recept");
     var citavTekst="<center>";
     for (var j=1; j<=ukupno; j++)
     {
-	  var recept=localStorage.getItem(j.toString()) ;
-	 niz[j-1]= narudzbina;
+	  var recept=localStorage.getItem(k+"_recept"+j.toString()) ;
+	 niz[j-1]= recept;
 	 citavTekst= citavTekst + "Recept "+ j  + "<br> <hr>";
 	}	
 		citavTekst+="<form name='forma'>  <input type='text' size='15' placeholder='Broj recepta' name='rednibroj'>  <input type='button' id='dugme' class='btn btn-primary btn-lg' value='PDF' onClick='downloadpdf()' > </form> <br><hr></center>";
