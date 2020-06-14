@@ -78,7 +78,8 @@ var novi = {
     'komentar': komentar,
     'dijagnoza': localStorage.getItem('dijagnoza_zahtjevv'),
     'imeprezime': localStorage.getItem('ulogovan_ime'),
-    'knjizica': localStorage.getItem('ulogovan_knjizica')
+    'knjizica': localStorage.getItem('ulogovan_knjizica'),
+	'id': id
 };
 stari.push(novi);
 localStorage.setItem('zahtjevi_svi', JSON.stringify(stari));

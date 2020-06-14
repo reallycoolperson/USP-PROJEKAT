@@ -18,6 +18,40 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   </head>
+  
+  <script>
+  function ucitaj_upute()
+  {
+   var id = localStorage.getItem('ulogovan_id');
+   var uput_kor = 'uputi' + id;
+    niz = JSON.parse(localStorage.getItem(uput_kor));
+ 
+  if(niz !=null)
+  {
+  var string = "";
+
+  for(var i = 0; i < niz.length; i++)
+{
+   var uput = " <div class='card' style='width: 38rem;'>"+
+  "<div class='card-body'>"+
+    "<h5 class='card-title'> " + niz[i].naslov +"</h5>"+
+	"<br>"+
+     "<h6 class='card-subtitle mb-2 text-muted'>Datum: "+ niz[i].datum+" </h6>"+
+	 "<h6 class='card-subtitle mb-2 text-muted'>Vrijeme: "+ niz[i].vrijeme+"</h6>"+
+	 "<h6 class='card-subtitle mb-2 text-muted'>" +niz[i].mjesto+ "</h6>"+
+	 "<h6 class='card-subtitle mb-2 text-muted'>" +niz[i].ljekar+" </h6>"+
+        "<br>"+
+    "<p class='card-text'><u> <i>Napomena:</i></u>  <i>"+niz[i].napomena+"</i></p>"+
+  "</div>"+
+"</div>  <br> <br>";
+string = string + uput;
+}
+ document.getElementById('uputi').innerHTML = string; 
+}
+  }
+  
+  
+  </script>
   <body >
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
@@ -72,6 +106,8 @@
     min-height: 707px;
 }
   </style>  
+  
+  <body onload = "ucitaj_upute()">
   <section style = "background: url(slike/slika.jpg) no-repeat center top; background-size: cover;  min-height: auto;">
     <div style = "background-color: rgba(0, 0, 0, 0.61); min-height: auto;">
     
@@ -144,8 +180,10 @@
     <p class="card-text"><u> <i>Napomena:</i></u>  <i>Na osnovu pregleda 10.06.2020, zakljuceno da je neophodan izvjestaj krvne slike. </i></p>
   </div>
 </div>
-<br>
-<br>
+ <br> <br>
+<div id = "uputi">
+
+</div>
 
 
 
@@ -153,7 +191,7 @@
 	  </center>
     </div>
   </section>
-	  
+	  </body>
   <!-- / banner -->
    <hr>
       <!-- FOOTER -->

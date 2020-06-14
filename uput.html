@@ -13,6 +13,94 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
+  
+  
+  <script>
+  
+  var sati = '';
+  var datum = '';
+  function vrijeme()
+  {
+      datum = document.getElementById('datum').value;
+	 if(datum != '')
+	 {
+	
+        var casovi = ['07','08','09','10','11','12','13','14','15']; //0-8
+		var minuti = ['00','05','10','15','20','25','30','35','40','45','50','55']; //0-11
+		
+		var h = Math.floor(Math.random() * 9); 
+		var m = Math.floor(Math.random() * 12); 
+		
+		 sati = casovi[h] + ':' + minuti[m];
+	       document.getElementById('termin').value = sati;        
+
+        document.getElementById('dugme').innerHTML = 
+	   "<button type='submit' class='btn btn-info' onclick = 'posalji()'>Zakazi</button> &nbsp; &nbsp; &nbsp;"
+
+	 }
+  }
+  
+  function vrijeme2()
+  {
+      datum = document.getElementById('datums').value;
+	 if(datum != '')
+	 {
+	
+        var casovi = ['07','08','09','10','11','12','13','14','15']; //0-8
+		var minuti = ['00','05','10','15','20','25','30','35','40','45','50','55']; //0-11
+		
+		var h = Math.floor(Math.random() * 9); 
+		var m = Math.floor(Math.random() * 12); 
+		
+		 sati = casovi[h] + ':' + minuti[m];
+	       document.getElementById('termins').value = sati;        
+
+        document.getElementById('dugmes').innerHTML = 
+	   "<button type='submit' class='btn btn-info' onclick = 'posalji2()'>Posalji uput</button> &nbsp; &nbsp; &nbsp;"
+
+	 }
+  }
+  
+  function posalji()
+  {
+  id = localStorage.getItem('uput_id');
+  if(id == -1) return;
+  document.getElementById('poslato').innerHTML =  "<br> Korisniku je zakazano kod vas " + datum + " u "+  sati + " casova" ;  
+ var stari = JSON.parse(localStorage.getItem('uputi' + id)) || [];
+   var novi = {
+    'naslov': 'Zakazano kod opsteg ljekara',
+    'datum': datum,
+    'vrijeme': sati,
+    'mjesto': 'Mjesto: Treci sprat, prostorija 32',
+    'ljekar': 'Izabrani ljekar: Jovana Milovic',
+	'napomena': document.getElementById('napomena').value
+};
+stari.push(novi);
+localStorage.setItem('uputi' + id, JSON.stringify(stari));
+  }
+  
+  
+  
+   function posalji2()
+  {
+  id = localStorage.getItem('uput_id');
+  if(id == -1) return;
+  document.getElementById('poslato2').innerHTML =  "<br> Korisniku je poslat uput za " + datum + " u "+  sati + " casova" ;  
+ var stari = JSON.parse(localStorage.getItem('uputi' + id)) || [];
+   var novi = {
+    'naslov': document.getElementById('uputs').value,
+    'datum': document.getElementById('datums').value,
+    'vrijeme': document.getElementById('termins').value,
+    'mjesto': 'Mjesto:' + document.getElementById('mjestos').value,
+    'ljekar': 'Specijalista:' + document.getElementById('doktors').value,
+	'napomena': document.getElementById('napomenas').value
+};
+stari.push(novi);
+localStorage.setItem('uputi' + id, JSON.stringify(stari));
+  }
+  
+  
+  </script>
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" > <!--navbar-->
@@ -55,17 +143,140 @@
     </header> <!--kraj navbara-->
 	
 	
+	 <section style = "background: url(slike/uput.jpg) no-repeat center top; background-size: cover;  min-height: auto;  width: 100%;">
+    <div style = "background-color: rgba(0, 0, 0, 0.61); min-height: auto;">
+    
+      <div class="container" >
+	  <br> <br> <br> 
+      <div class="card" style="width: 48rem; margin-top: 100px; margin-left: 160px">
+  <div class="card-body">
+    <h5 class="card-title"> Zakazite pregled pacijentu</h5>
+    <p class="card-text"> 
 	
+	<form id = "uput">
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Datum</label>
+    <div class="col-sm-10">
+      <input type="text"   class="form-control" id="datum" placeholder="Unesite datum">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Vrijeme</label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="termin" placeholder="Slobodan termin ce biti generisan automatski">
+    </div>
+  </div>
+  
+   <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Mjesto</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext"  id="vrijeme" value="Treci sprat, prostorija 32">
+    </div>
+  </div>
+  
+   <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Opsti ljekar</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="vrijeme" value="Jovana Milovic">
+    </div>
+  </div>
+  
+   <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Napomena</label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="napomena" value="Unesite vas komentar o slucaju">
+    </div>
+  </div>
+</form>
 	
-    <main role="main">
-	
-		
-		        <hr class="featurette-divider">
+	</p>
+<center>
+<div id = "dugme">
+	 <button type='submit' class='btn btn-info' onclick = 'vrijeme()'>Generisi vrijeme</button> &nbsp; &nbsp; &nbsp;
+</div>
 
-        <!-- /END THE FEATURETTES -->
-      </div><!-- /.container -->
-	  
+</center>
+
+    <p class="card-text text-danger" id = "poslato" > 
+</p>
+	 </div>
+</div>
+	
+		<br> <br> <br>
+<div class="card" style="width: 48rem; margin-top: 100px; margin-left: 160px">
+  <div class="card-body">
+    <h5 class="card-title"> Zakazite pregled pacijentu</h5>
+    <p class="card-text"> 
+	<form id = "uput2">
+	
+	<div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Uput za: </label>
+    <div class="col-sm-10">
+      <input type="text"   class="form-control" id="uputs" placeholder="Kome je uput proslijedjen">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Datum</label>
+    <div class="col-sm-10">
+      <input type="text"   class="form-control" id="datums" placeholder="Unesite datum">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Vrijeme</label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="termins" placeholder="Slobodan termin ce biti generisan automatski">
+    </div>
+  </div>
+  
+   <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Mjesto</label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control"  id="mjestos" placeholder="Unesite mjesto">
+    </div>
+  </div>
+  
+   <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Ime specijaliste:</label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="doktors" placeholder="Unesite ime specijaliste">
+    </div>
+  </div>
+  
+   <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Napomena</label>
+    <div class="col-sm-10">
+      <input type="text"  class="form-control" id="napomenas" placeholder="Unesite vas komentar o slucaju">
+    </div>
+  </div>
+</form>
+	</p>
+<center>
+<div id = "dugmes">
+	 <button type='submit' class='btn btn-info' onclick = 'vrijeme2()'>Generisi vrijeme</button> &nbsp; &nbsp; &nbsp;
+</div>
+
+</center>
+
+    <p class="card-text text-danger" id = "poslato2" > 
+</p>
+	
+	
+	
+	
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
+
+      </div>
+    </div>
+  </section>
       <!-- FOOTER -->
+	  		        <hr class="featurette-divider">
+
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
        <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</p>
