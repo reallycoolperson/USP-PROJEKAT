@@ -25,17 +25,9 @@
 
 		  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> <!--za pdf-->
      <script>
-	 
- function downloadpdf()
-  { 	 
-   var	br=parseInt(document.forma.rednibroj.value) -1;
-   var pdf = new jsPDF();
-   	 var pdfstring=niz[br];
-	 pdf.text(pdfstring,50,50);
-	 pdf.save('recept.pdf');	
-  }
-  
-  var niz=new Array();
+	   var niz=new Array();
+
+
   function pisi()
   {  
   var k=localStorage.getItem("ulogovan_knjizica");
@@ -50,16 +42,25 @@
     var citavTekst="<center>";
     for (var j=1; j<=ukupno; j++)
     {
-	  var recept=localStorage.getItem(k+"_recept"+j.toString()) ;
+	  var recept=localStorage.getItem(k+"_recept_"+j) ;
 	 niz[j-1]= recept;
 	 citavTekst= citavTekst + "Recept "+ j  + "<br> <hr>";
-	}	
-		//dugme
+	}
 		citavTekst+="<form name='forma'>  <input type='text' size='15' placeholder='Broj recepta' name='rednibroj'>  <input type='button' id='dugme' class='btn btn-primary btn-lg' value='PDF' onClick='downloadpdf()' > </form> <br><hr></center>";
    document.getElementById("tekst").innerHTML=citavTekst ;  
   
    } 
-  }			
+  }
+
+ function downloadpdf()
+  { 	 
+   var	br=parseInt(document.forma.rednibroj.value) -1;
+   var pdf = new jsPDF();
+   	 var pdfstring=niz[br];
+	 pdf.text(pdfstring,50,50);
+	 pdf.save('recept.pdf');	
+  }
+    
  </script>
 </head>
 <body onload = "pisi()">
