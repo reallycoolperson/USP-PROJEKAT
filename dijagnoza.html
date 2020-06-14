@@ -20,19 +20,22 @@
  <script>
  function ucitaj()
  {
+
   var el = document.getElementById("gif_tableta");
     el.innerHTML="<img src='slike/crvena.gif'  style = 'width: 300px; height: 300px;'>";
     setTimeout(gif, 3000);
-  
+
 	
  }
-
+var komentar;
 var value=localStorage["dijagnoza"];
 var simptomi=localStorage["simptomi"];
+
 
 // var value = localStorage.getItem('dijagnoza');
  function gif()
 {
+var dijagnoza_zah = ""
  var el = document.getElementById("gif_tableta");
  var dijagnoza="";
  var el2 = document.getElementById("dijagnoza");
@@ -43,12 +46,17 @@ var simptomi=localStorage["simptomi"];
  if(value == 1 || value == 2 || value == 0 )
  {
  var string2 =  "<p><a class='btn btn-lg btn-info' href='#' role='button'  data-toggle='modal' data-target='#zakazi'>Zakazite</a></p>";
+  dijagnoza_zah = dijagnoza;
  dijagnoza = dijagnoza  + string2;
  }
  var procenat=Math.round(10 + Math.random()*90);
 var string =  "";
-if (value==-1 || dijagnoza== ""){ string =  "<h4 class='logo-name' style='font-size:50px' > Dijagnoza nije odredjena zbog nedostatka dovoljno informacija </h4>";}
-else string =  "<h5 class='logo-name' style='font-size:50px' > Sa vjerovatnocom od "+ procenat + "% dijagnoza je: "+ dijagnoza +" </h5>";
+if (value==-1 || dijagnoza== ""){ string =  "<h4 class='logo-name' style='font-size:50px' > Dijagnoza nije odredjena zbog nedostatka dovoljno informacija </h4>"; localStorage.setItem('dijagnoza_zahtjevv', "Dijagnoza nije odredjena zbog nedostatka dovoljno informacija"); }
+else { 
+ string =  "<h5 class='logo-name' style='font-size:50px' > Sa vjerovatnocom od "+ procenat + "% dijagnoza je: "+ dijagnoza +" </h5>";
+ var zah = "Sa vjerovatnocom od "+ procenat + "% dijagnoza je: "+ dijagnoza_zah; 
+ localStorage.setItem('dijagnoza_zahtjevv', zah);
+ }
     el.innerHTML = "";
 	el2.innerHTML= string;
 	//localStorage.clear();
@@ -58,6 +66,23 @@ else string =  "<h5 class='logo-name' style='font-size:50px' > Sa vjerovatnocom 
 
 function zakazi()
 {
+var niz1= JSON.parse(localStorage.getItem("imeprezime"));
+var niz2= JSON.parse(localStorage.getItem("knjizica"));
+	 	 var id = localStorage.getItem('ulogovan_id');
+
+var komentar = "Nema.";
+if(document.getElementById('poruka')) komentar = document.getElementById('poruka').value;
+var stari = JSON.parse(localStorage.getItem('zahtjevi_svi')) || [];
+var novi = {
+    'simptomi': localStorage.getItem('simptomi_zahtjev'),
+    'komentar': komentar,
+    'dijagnoza': localStorage.getItem('dijagnoza_zahtjevv'),
+    'imeprezime': localStorage.getItem('ulogovan_ime'),
+    'knjizica': localStorage.getItem('ulogovan_knjizica')
+};
+stari.push(novi);
+localStorage.setItem('zahtjevi_svi', JSON.stringify(stari));
+
  var el1 = document.getElementById("dijagnoza");
  var el2 = document.getElementById("naslov");
  el2.innerHTML = "";

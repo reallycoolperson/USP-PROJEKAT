@@ -32,7 +32,8 @@
 							var prehlada=0;
 							var covid=0;
 							var symptoms= simptomi.selected.toString();
-			//				alert(symptoms);
+				            localStorage["simptomi_zahtjev"] = symptoms;
+
 																
 							if (symptoms.includes("gubitak apetita") ) {gripa++; value=0; }
 							if (symptoms.includes("zacepljen nos") ) { prehlada++; }
@@ -52,6 +53,8 @@
 							if (value==0 && (covid==0)) {value=0;}
 							
 							localStorage["dijagnoza"] = value;
+					        localStorage["dijagnoza_zah"] = value;
+
 //localStorage.setItem('dijagnoza', value); 							
 				window.open("dijagnoza.html");
 							}

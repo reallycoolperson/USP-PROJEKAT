@@ -11,6 +11,12 @@
 
 function baza()
 { 
+
+if(localStorage.getItem('zahtjevi_br') === null)
+{
+localStorage.setItem('zahtjevi_br' , '0');
+}
+
 var usernames = [];
 usernames[0] = "pero";
 usernames[1] = "doktor";
@@ -86,6 +92,7 @@ localStorage.setItem("uloge", JSON.stringify(uloge));
 localStorage.setItem("ulogovan_id", '0');
 
 
+
 //default
 
 /*var storedNames = JSON.parse(localStorage.getItem("usernames"));
@@ -111,6 +118,9 @@ if(username == storedUsernames[i]) nadjen = i;
 if(nadjen > -1)
 {
 var storedPasswords = JSON.parse(localStorage.getItem("passwords"));
+var imena = JSON.parse(localStorage.getItem("imeprezime"));
+var knjizica = JSON.parse(localStorage.getItem("knjizica"));
+
 var praviPassword = storedPasswords[nadjen];
 if(praviPassword == password) 
 {
@@ -121,6 +131,9 @@ if(praviPassword == password)
 	  else if (uloga == "doktor")
 	  window.open("doktor.html");
 	  localStorage.setItem("ulogovan_id", nadjen);
+	  	  localStorage.setItem("ulogovan_ime", imena[nadjen]);
+	  localStorage.setItem("ulogovan_knjizica", knjizica[nadjen]);
+
 }
 else 
 {

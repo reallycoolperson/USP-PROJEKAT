@@ -13,7 +13,45 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
-  <body>
+  
+  
+  <script>
+ function ucitaj_zahtjeve()
+ {
+
+ niz = JSON.parse(localStorage.getItem('zahtjevi_svi'));
+if(niz != null)
+{
+var string = "";
+for(var i = 0; i < niz.length; i++)
+{
+  var zahtjev = "<div class='card' style='width: 48rem; margin-left: 160px'> "+ 
+    " <div class='card-body'>" +
+    "<h5 class='card-title'>" + niz[i].imeprezime + "</h5> " + 
+     " <h6 class='card-subtitle mb-2 text-muted'>Broj knjizice: " + niz[i].knjizica + "</h6>  "+
+    "<p class='card-text'> <u>Simptomi: </u>" +  niz[i].simptomi + "</p>"+
+     "<p class='card-text'> <u>Pacijentov komentar: </u>" + niz[i].komentar +"</p>"+
+    " <p class='card-text text-danger'> <u>Sistemska pretpostavka: </u>" + niz[i].dijagnoza + " </p>"+
+	"<center>"+
+	"<a href='analiza1.html' class='card-link'>Dati uput</a>"+
+	"<a href='analiza1.html' class='card-link'>Zakazati</a>"+
+    "</center>"+
+   "</div>"+
+"</div> <br> <br> <br>";
+string = string + zahtjev;
+}
+document.getElementById('zahtjevi').innerHTML = string;
+
+}
+
+
+ 
+ 
+ }
+  
+  
+  </script>
+  <body onload = "ucitaj_zahtjeve()">
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" > <!--navbar-->
        <img src='slike/logo.png' height='120px' width='115px' alt='Logo'> 	<!-- logo -->
@@ -57,7 +95,64 @@
 	
 	
 	
-    <main role="main">
+  <section style = "background: url(slike/zahtjevi.jpg) no-repeat center top; background-size: cover;  min-height: auto;  width: 100%;">
+    <div style = "background-color: rgba(0, 0, 0, 0.61); min-height: auto;">
+    
+      <div class="container" >
+	  <br> <br> <br> 
+      <div class="card" style="width: 48rem; margin-top: 100px; margin-left: 160px">
+  <div class="card-body">
+    <h5 class="card-title"> Miljana Minic</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Broj knjizice: 22341221</h6>
+    <p class="card-text"> <u>Simptomi: </u>kasalj, nedostatak vazduha, groznica, drhatvica, slabost, bolovi u misicima, glavobolja, herpes na usni</p>
+    <p class="card-text"> <u>Pacijentov komentar: </u>Nema.</p>
+    <p class="card-text text-danger"> <u>Sistemska pretpostavka: </u>Upala pluca 80%, 4% bronhitis</p>
+<center>
+	<a href="analiza1.html" class="card-link">Dati uput</a>
+	<a href="analiza1.html" class="card-link">Zakazati</a>
+</center>
+  </div>
+</div>
+<br>
+<br>
+<br>
+      <div class="card" style="width: 48rem; margin-left: 160px">
+   <div class="card-body">
+    <h5 class="card-title"> Petar Petrovic</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Broj knjizice: 321222325</h6>
+    <p class="card-text"> <u>Simptomi: </u> crvenilo oko, glavobolja, blic svijetla s crnim tackama</p>
+    <p class="card-text"> <u>Pacijentov komentar: </u>Jako slabo vidim iz zadnje klupe i osjecam pritisak u ocima.</p>
+    <p class="card-text text-danger"> <u>Sistemska pretpostavka: </u>Los vid 99,2% </p>
+
+	<center>
+	<a href="analiza1.html" class="card-link">Dati uput</a>
+	<a href="analiza1.html" class="card-link">Zakazati</a>
+     </center>
+  </div>
+</div>
+<br>
+
+<br>
+<br>
+
+<div id = "zahtjevi"> 
+
+</div>
+
+      </div>
+    </div>
+  </section>
+  <!-- / banner -->
+  <!-- / banner -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 		
 		        <hr class="featurette-divider">
