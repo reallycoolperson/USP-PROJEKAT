@@ -26,7 +26,7 @@
 		  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> <!--za pdf-->
      <script>
 	 
- function fun()
+ function downloadpdf()
   { 	 
    var	br=parseInt(document.forma.rednibroj.value) -1;
    var pdf = new jsPDF();
@@ -48,14 +48,14 @@
     var citavTekst="<center>";
     for (var j=1; j<=ukupno; j++)
     {
-	  var narudzbina=localStorage.getItem(j.toString()) ;
+	  var recept=localStorage.getItem(j.toString()) ;
 	 niz[j-1]= narudzbina;
-	 citavTekst= citavTekst + "Narudzba "+ j  + "<br> <hr>";
+	 citavTekst= citavTekst + "Recept "+ j  + "<br> <hr>";
 	}	
-		citavTekst+="<form name='forma'>  <input type='text' size='15' placeholder='Broj narudzbine' name='rednibroj'>  <input type='button' id='dugme' class='btn btn-primary btn-lg' value='PDF' onClick='fun()' > </form> <br><hr></center>";
+		citavTekst+="<form name='forma'>  <input type='text' size='15' placeholder='Broj recepta' name='rednibroj'>  <input type='button' id='dugme' class='btn btn-primary btn-lg' value='PDF' onClick='downloadpdf()' > </form> <br><hr></center>";
    document.getElementById("tekst").innerHTML=citavTekst ;  
   
-   }//end_else 
+   } 
   }			
  </script>
 </head>
