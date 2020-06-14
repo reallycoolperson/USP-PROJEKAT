@@ -26,6 +26,8 @@
      <script>
 	 function ucitaj()
 	 {
+	      var k=localStorage.getItem("ulogovan_knjizica");
+					
 	 var niz1= JSON.parse(localStorage.getItem("imeprezime"));
 	 var niz2= JSON.parse(localStorage.getItem("pol"));
 	 var niz3= JSON.parse(localStorage.getItem("datum"));
@@ -43,6 +45,8 @@
      document.getElementById('mail').value ="E-mail: " + niz6[id];
 	 document.getElementById('tel').value = "Broj telefona: " + niz7[id];
      document.getElementById('knjizica').value = "Broj zdravstvene knjizice: " + niz8[id];
+	 if (localStorage[k+'_porodicniljekar'] != null && localStorage[k+'_porodicniljekar']!= ""){document.getElementById("doca").value=localStorage[k+'_porodicniljekar'];}
+	 if (localStorage[k+'_stanovanje'] != null && localStorage[k+'_stanovanje'] != ""){ document.getElementById("mjesto").value=localStorage[k+'_stanovanje'];}
 	 }
 	 
 	 function izmijeni()
@@ -67,10 +71,13 @@
 	if (flag == 1) ucitaj();
 	
 	 }
+	 
+	 
                        function dodaj()
 					   {
-					   localStorage['porodicniljekar']=document.getElementById("ljekar").value;
-					   localStorage['stanovanje']=document.getElementById("stanovanje").value;
+					     var k=localStorage.getItem("ulogovan_knjizica");
+					   localStorage[k+'_porodicniljekar']=document.getElementById("ljekar").value;
+					   localStorage[k+'_stanovanje']=document.getElementById("stanovanje").value;
 					   var poljeporodicni=document.getElementById("doca");
 					   var poljestanovanje=document.getElementById("mjesto");
 					   poljeporodicni.value="Porodicni ljekar: "+document.getElementById("ljekar").value;
