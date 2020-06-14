@@ -12,6 +12,24 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+				
+				function dodajrecept()
+				{
+				var datum=document.getElementById("datum").value;
+				var pacijent=document.getElementById("pacijent").value;
+				var lijek=document.getElementById("lijek").value;
+				var ljekar=document.getElementById("ljekar").value;
+				var kolicina=document.getElementById("kolicina").value;
+				var ustanova=document.getElementById("ustanova").value;
+				var recept="Datum: "+datum +"\nPacijent: "+ pacijent + "\nLijek: "+lijek+"\nLjekar: "+ljekar+"\Kolicina: "+kolicina+"\nUstanova: "+ ustanova;
+				
+				 localStorage[pacijent+"recept"]+=1;
+				 var br=localStorage[pacijent+"recept"];
+				 localStorage[pacijent+"recept"+br]=recept;
+				
+				}
+</script>
   </head>
   <body>
     <header>
@@ -78,7 +96,7 @@
 				 <input type='text' class='form-control' id="ljekar" placeholder="Ime i prezime ljekara koji propisuje lijek" value= "" ><br>
 				 <input type='text' class='form-control' id="kolicina" placeholder="Propisana kolicina lijeka" value= "" ><br>
 				 <input type='text' class='form-control' id="ustanova" placeholder="Zdravstvena ustanova u kojoj radi ljekar" value= "" ><br>
-				  <button type="submit" style="margin-left:450px" class="btn btn-info"  onclick = "dodajporodica()">
+				  <button type="submit" style="margin-left:450px" class="btn btn-info"  onclick = "dodajrecept()">
 													Dodaj
 												</button>   
 				</form>

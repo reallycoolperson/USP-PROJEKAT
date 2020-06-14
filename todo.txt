@@ -9,3 +9,7 @@ istorija (dijagnoze posebno porodica i osoba) --MARTINA MARIJA
 recepti: skine u pdf receptu //na kraju  --MARTINA
 
 login.html-- MARIJA
+
+
+-treba negdje da se prvi put za pacijenta azurira koliko ima recepata izdatih localhost[imepacijentarecept]=0;
+-kod dijagnoze rijesiti kako se pamti u localstorage dijagnoze i bolesti porodice

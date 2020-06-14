@@ -23,11 +23,43 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
 
+		  <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> <!--za pdf-->
      <script>
-							
+	 
+ function fun()
+  { 	 
+   var	br=parseInt(document.forma.rednibroj.value) -1;
+   var pdf = new jsPDF();
+   	 var pdfstring=niz[br];
+	 pdf.text(pdfstring,50,50);
+	 pdf.save('racun.pdf');	
+  }
+  
+  var niz=new Array();
+  function pisi()
+  {  
+    if (localStorage.getItem("i") ===null || localStorage.getItem("i") == 0  )
+	  {
+	    document.getElementById("tekst").innerHTML="<center>Nemate jos nijedan propisan recept!</center> <hr>";
+	  }
+	else
+   {	
+	var ukupno= localStorage.getItem("i");
+    var citavTekst="<center>";
+    for (var j=1; j<=ukupno; j++)
+    {
+	  var narudzbina=localStorage.getItem(j.toString()) ;
+	 niz[j-1]= narudzbina;
+	 citavTekst= citavTekst + "Narudzba "+ j  + "<br> <hr>";
+	}	
+		citavTekst+="<form name='forma'>  <input type='text' size='15' placeholder='Broj narudzbine' name='rednibroj'>  <input type='button' id='dugme' class='btn btn-primary btn-lg' value='PDF' onClick='fun()' > </form> <br><hr></center>";
+   document.getElementById("tekst").innerHTML=citavTekst ;  
+  
+   }//end_else 
+  }			
  </script>
 </head>
-<body>
+<body onload = "pisi()">
     <div id="app">
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!--navbar-->
        <img src='slike/logo.png' height='120px' width='150px' alt='Logo'> 	<!-- logo -->
@@ -80,7 +112,26 @@
 }
   </style> 
   <section id='banner'>
+  <div class="bg-color">
+      <div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-1">
+			 <div style='margin-top:100px; 	color: black; width: 600px;  height: 600px; margin-left:-700px; ' class="card">
+                <div class="card-header" style =" background:rgba(0,0,0,0.3);" ><b>Moji recepti</b></div>
 
+                <div class="card-body"  style =" background:rgba(0,0,0,0.3);">
+ 
+				<div id='tekst'>
+				</div>
+ </div>
+            </div>
+        </div>
+	
+			
+			</div>
+		</div>
+	  </div>
+	</div>
 </section>	
 
 
