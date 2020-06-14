@@ -26,25 +26,46 @@
      <script>
 	 function ucitaj()
 	 {
-	  if( localStorage['email']) { var poljeemail=document.getElementById("mail"); poljeemail.value="Email: "+localStorage['email']; }
-	  if( localStorage['telefon']) {  var poljetelefon=document.getElementById("tel"); poljetelefon.value="Broj telefona: "+localStorage['telefon'];}
-	  if( localStorage['porodicniljekar']) {  var poljeporodicni=document.getElementById("doca");  poljeporodicni.value="Porodicni ljekar: "+localStorage['porodicniljekar'];
-					  }
-	  if( localStorage['stanovanje']) {  var poljestanovanje=document.getElementById("mjesto"); poljestanovanje.value="Mjesto stanovanja: "+localStorage['stanovanje'];
-					  }
-	  
-	 
+	 var niz1= JSON.parse(localStorage.getItem("imeprezime"));
+	 var niz2= JSON.parse(localStorage.getItem("pol"));
+	 var niz3= JSON.parse(localStorage.getItem("datum"));
+	 var niz4= JSON.parse(localStorage.getItem("mjestorodjenja"));
+	 var niz5= JSON.parse(localStorage.getItem("jmbg"));
+	 var niz6= JSON.parse(localStorage.getItem("email"));
+	 var niz7= JSON.parse(localStorage.getItem("tel"));
+	 var niz8= JSON.parse(localStorage.getItem("knjizica"));
+	 var id = localStorage.getItem('ulogovan_id');
+	 document.getElementById('imeprezime').value = "Ime i prezime: "  + niz1[id];
+     document.getElementById('pol').value = "Pol: " + niz2[id];
+	 document.getElementById('datumrodjenja').value = "Datum rodjenja: " + niz3[id];
+     document.getElementById('mjestorodjenja').value = "Mjesto rodjenja: "  + niz4[id];
+	 document.getElementById('jmbg').value ="JMBG: " +  niz5[id];
+     document.getElementById('mail').value ="E-mail: " + niz6[id];
+	 document.getElementById('tel').value = "Broj telefona: " + niz7[id];
+     document.getElementById('knjizica').value = "Broj zdravstvene knjizice: " + niz8[id];
 	 }
 	 
 	 function izmijeni()
 	 {
-	 
-	 localStorage['email']=document.getElementById("email").value;
-	 localStorage['telefon']=document.getElementById("telefon").value;
-	 var poljeemail=document.getElementById("mail");
-	 var poljetelefon=document.getElementById("tel");
-	 poljeemail.value="Email: "+document.getElementById("email").value;
-	 poljetelefon.value="Broj telefona: "+document.getElementById("telefon").value;
+	  var id = localStorage.getItem('ulogovan_id');
+	  var flag = 0;
+	  if(document.getElementById("email").value!="")
+	  {
+	  niz_email =  JSON.parse(localStorage.getItem("email"))
+	  niz_email[id] = document.getElementById("email").value;
+	  localStorage.setItem("email", JSON.stringify(niz_email));
+	  flag = 1;
+	  }
+	  if(document.getElementById("telefon").value!= "")
+	  {
+	  niz_tel =  JSON.parse(localStorage.getItem("tel"))
+	  niz_tel[id] = document.getElementById("telefon").value;
+	  localStorage.setItem("tel", JSON.stringify(niz_tel));
+	  flag = 1;
+	  }
+	
+	if (flag == 1) ucitaj();
+	
 	 }
                        function dodaj()
 					   {
@@ -84,10 +105,7 @@
 					<li class=" ulNli nav-item">
 						<a class="ulNlia nav-link" href="analize.html">Analize</a>
 					</li>
-											<li class=" ulNli nav-item">
-						<a class="ulNlia nav-link" href="receptipacijent.html">Recepti</a>
-					</li>
-
+					
 					<li class=" ulNli nav-item active">
 						<a class="ulNlia nav-link" href="omeni.html">O meni</a>
 					</li> 
@@ -139,7 +157,7 @@
                               <div class="form-check">
                                 <label class="form-check-label" for="gridRadios1" style = ' width: 500px;'>
                                   <div class='form-group has-error has-feedback'>
-                                    <input type='text' class='form-control' name='izbor'  value= "Ime i prezime: Marko Markovic"  disabled>
+                                    <input type='text' class='form-control' id='imeprezime'  value= ""  disabled>
                                   </div>
                                 </label>
                                 </div>
@@ -152,7 +170,7 @@
                               <div class="form-check">
                                 <label class="form-check-label" for="gridRadios2" style = ' width: 500px;'>
                                   <div class='form-group has-error has-feedback'>
-                                    <input type='text' class='form-control' name='izbor'  value= "Pol: muski"  disabled>
+                                    <input type='text' class='form-control' id='pol'  value= ""  disabled>
                                   </div>
                                 </label>
                                 </div>
@@ -165,7 +183,7 @@
                              <div class="form-check">
                                <label class="form-check-label" for="gridRadios3" style = ' width: 500px;'>
                                  <div class='form-group has-error has-feedback'>
-                                   <input type='text' class='form-control' name='izbor'  value= "Datum rodjenja: 14.06.1998"  disabled>
+                                   <input type='text' class='form-control' id='datumrodjenja'  value= ""  disabled>
                                  </div>
                                </label>
                                </div>
@@ -177,7 +195,7 @@
                                 <div class="form-check">
                                   <label class="form-check-label" for="gridRadios4" style = ' width: 500px;'>
                                     <div class='form-group has-error has-feedback'>
-                                      <input type='text' class='form-control' name='izbor'  value= "Mjesto rodjenja: Doboj"  disabled>
+                                      <input type='text' class='form-control' id='mjestorodjenja'  value= ""  disabled>
                                     </div>
                                   </label>
                                   </div>
@@ -189,7 +207,7 @@
                                 <div class="form-check">
                                   <label class="form-check-label" for="gridRadios4" style = ' width: 500px;'>
                                     <div class='form-group has-error has-feedback'>
-                                      <input type='text' class='form-control' name='izbor'  value= "JMBG: 1406998000000"  disabled>
+                                      <input type='text' class='form-control' id='jmbg'  value= ""  disabled>
                                     </div>
                                   </label>
                                   </div>
@@ -200,7 +218,7 @@
                                 <div class="form-check">
                                   <label class="form-check-label" for="gridRadios4" style = ' width: 500px;'>
                                     <div class='form-group has-error has-feedback'>
-                                      <input type='text' class='form-control' name='mail' id='mail'  value= "email: mmarko@gmail.com"  disabled>
+                                      <input type='text' class='form-control'  id='mail'  value= ""  disabled>
                                     </div>
                                   </label>
                                   </div>
@@ -211,7 +229,7 @@
                                 <div class="form-check">
                                   <label class="form-check-label" for="gridRadios4" style = ' width: 500px;'>
                                     <div class='form-group has-error has-feedback'>
-                                      <input type='text' class='form-control' name='tel' id='tel'  value= "Broj telefona: 0667119282"  disabled>
+                                      <input type='text' class='form-control' name='tel' id='tel'  value= ""  disabled>
                                     </div>
                                   </label>
                                   </div>
@@ -222,7 +240,7 @@
                                 <div class="form-check">
                                   <label class="form-check-label" for="gridRadios4" style = ' width: 500px;'>
                                     <div class='form-group has-error has-feedback'>
-                                      <input type='text' class='form-control' name='izbor'  value= "Broj zdravstvene knjizice: 2459111"  disabled>
+                                      <input type='text' class='form-control' name='izbor' id = "knjizica"  value= ""  disabled>
                                     </div>
                                   </label>
                                   </div>

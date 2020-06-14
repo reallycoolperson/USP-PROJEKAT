@@ -14,16 +14,80 @@ function baza()
 var usernames = [];
 usernames[0] = "pero";
 usernames[1] = "doktor";
+usernames[2] = "nina";
 localStorage.setItem("usernames", JSON.stringify(usernames));
+
 var passwords = [];
 passwords[0] = "pero123";
 passwords[1] = "doktor123";
+passwords[2] = "nina123";
 localStorage.setItem("passwords", JSON.stringify(passwords));
+
+var imeprezime = [];
+imeprezime[0] = "Pero Peric";
+imeprezime[1] = "Jovana Milovic";
+imeprezime[2] = "Nikolina Nikolinic";
+localStorage.setItem("imeprezime", JSON.stringify(imeprezime));
+
+var pol = [];
+pol[0] = "muski";
+pol[1] = "zenski";
+pol[2] = "zenski";
+localStorage.setItem("pol", JSON.stringify(pol));
+
+var jmbg = [];
+jmbg[0] = "3006998225111";
+jmbg[1] = "0203992223212";
+jmbg[2] = "1406993020202";
+localStorage.setItem("jmbg", JSON.stringify(jmbg));
+
+var datum = [];
+datum[0] = "30.06.1998.";
+datum[1] = "02.03.1993.";
+datum[2] = "14.06.1993.";
+localStorage.setItem("datum", JSON.stringify(datum));
+
+var mjestorodjenja = [];
+mjestorodjenja[0] = "Niksic";
+mjestorodjenja[1] = "Beograd";
+mjestorodjenja[2] = "Doboj";
+localStorage.setItem("mjestorodjenja", JSON.stringify(mjestorodjenja));
+
+var email = [];
+if(localStorage.getItem("email") === null)
+{
+email[0] = "pericapero@gmail.com";
+email[1] = "doktorica@gmail.com";
+email[2] = "nikolininica@gmail.com";
+localStorage.setItem("email", JSON.stringify(email));
+}
+
+
+var tel = [];
+if(localStorage.getItem("tel") === null)
+{
+tel[0] = "+38268232023";
+tel[1] = "+381693214569";
+tel[2] = "+381691112223";
+localStorage.setItem("tel", JSON.stringify(tel));
+}
+
+var knjizica = [];
+knjizica[0] = "2459111";
+knjizica[1] = "2454131";
+knjizica[2] = "3216821";
+localStorage.setItem("knjizica", JSON.stringify(knjizica));
 
 var uloge = [];
 uloge[0] = "pacijent";
 uloge[1] = "doktor";
+uloge[2] = "pacijent";
 localStorage.setItem("uloge", JSON.stringify(uloge));
+localStorage.setItem("ulogovan_id", '0');
+
+
+//default
+
 /*var storedNames = JSON.parse(localStorage.getItem("usernames"));
 alert(storedNames[0]);*/
 }
@@ -31,6 +95,7 @@ alert(storedNames[0]);*/
 
 function uloguj()
 {
+
 document.getElementById('poruka_username').innerHTML = "";
 document.getElementById('poruka_password').innerHTML = "";
 
@@ -55,6 +120,7 @@ if(praviPassword == password)
 	  window.open("pacijent.html");
 	  else if (uloga == "doktor")
 	  window.open("doktor.html");
+	  localStorage.setItem("ulogovan_id", nadjen);
 }
 else 
 {
