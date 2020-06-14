@@ -45,8 +45,8 @@
      document.getElementById('mail').value ="E-mail: " + niz6[id];
 	 document.getElementById('tel').value = "Broj telefona: " + niz7[id];
      document.getElementById('knjizica').value = "Broj zdravstvene knjizice: " + niz8[id];
-	 if (localStorage[k+'_porodicniljekar'] != null && localStorage[k+'_porodicniljekar']!= ""){document.getElementById("doca").value=localStorage[k+'_porodicniljekar'];}
-	 if (localStorage[k+'_stanovanje'] != null && localStorage[k+'_stanovanje'] != ""){ document.getElementById("mjesto").value=localStorage[k+'_stanovanje'];}
+	 if (localStorage[k+'_porodicniljekar'] != null && localStorage[k+'_porodicniljekar']!= ""){document.getElementById("doca").value="Porodicni ljekar: "+localStorage[k+'_porodicniljekar'];}
+	 if (localStorage[k+'_stanovanje'] != null && localStorage[k+'_stanovanje'] != ""){ document.getElementById("mjesto").value="Mjesto stanovanja: "+localStorage[k+'_stanovanje'];}
 	 }
 	 
 	 function izmijeni()
