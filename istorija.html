@@ -24,7 +24,7 @@
 		  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
 
      <script>
-	 var br=0;
+	 
 						function ucitaj()
 						{
 						if (localStorage['brBolesti'] != null && localStorage['brBolesti'] != 0)
@@ -39,12 +39,15 @@
 						
                        function dodaj()
 					   {
+					    var k=localStorage.getItem("ulogovan_knjizica");
+	 
 					   var dijagnoza= document.getElementById('bolest').value;
 					   var tabela=document.getElementById('tabela');
 					   tabela.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ dijagnoza+"'  disabled><br>";
-                                 br++;
-					   localStorage['brBolesti']=br; //da ih sve ispise
-					   localStorage[br]=dijagnoza;
+                                 
+					   localStorage[k+'_bolest']=parseInt(localStorage[k+'_bolest'])+1; 
+					   var br=localStorage[k+'_bolest'];
+					   localStorage[k+"_bolest_"+br]=dijagnoza;
 						
 					   }
 					    function dodajporodica()
@@ -52,9 +55,9 @@
 					   var dijagnoza= document.getElementById('bolestporodica').value;
 					   var tabela=document.getElementById('tabelaporodica');
 					   tabela.innerHTML+="  <input type='text' class='form-control' name='izbor'  value= 'Dijagnoza: "+ dijagnoza+"'  disabled><br>";
-//                                 br++;
-//					   localStorage['brBolesti']=br; //da ih sve ispise
-//					   localStorage[br]=dijagnoza;
+					   localStorage[k+'_bolestporodica']=parseInt(localStorage[k+'_bolest'])+1; 
+					   var br=localStorage[k+'_bolestporodica'];
+					   localStorage[k+"_bolestporodica_"+br]=dijagnoza;
 						
 					   }
 							
