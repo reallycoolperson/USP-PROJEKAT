@@ -53,11 +53,46 @@
 		          </div>
       </nav>
     </header> <!--kraj navbara-->
+		   <style>
+  #banner{
+    background: url(slike/pills2.jpg) no-repeat center top;
+    background-size: cover;
+    min-height: 707px;
+}
+  </style> 
 	
+<section id='banner'>
+ <div class="bg-color">
+      <div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-1">
+			 <div style='margin-top:100px; 	color: black; width: 600px;  height: 600px; ' class="card">
+                <div class="card-header" style =" background:rgba(0,0,0,0.3);" ><b>Recept</b></div>
+
+                <div class="card-body"  style =" background:rgba(0,0,0,0.3);">
+                   
+				<form name='recept'>
+				 <input type='date' class='form-control' id="datum" placeholder="" value= "" ><br>
+				  <input type='text' class='form-control' id="pacijent" placeholder="Podaci pacijenta kojem se propisuje lijek" value= "" ><br>
+				 <input type='text' class='form-control' id="lijek" placeholder="Ime propisanog lijeka" value= "" ><br>
+				 <input type='text' class='form-control' id="ljekar" placeholder="Ime i prezime ljekara koji propisuje lijek" value= "" ><br>
+				 <input type='text' class='form-control' id="kolicina" placeholder="Propisana kolicina lijeka" value= "" ><br>
+				 <input type='text' class='form-control' id="ustanova" placeholder="Zdravstvena ustanova u kojoj radi ljekar" value= "" ><br>
+				  <button type="submit" style="margin-left:450px" class="btn btn-info"  onclick = "dodajporodica()">
+													Dodaj
+												</button>   
+				</form>
+				     </div>
+            </div>
+        </div>
 	
-	
-	
-    <main role="main">
+			
+			</div>
+		</div>
+	  </div>
+	</div>
+</section>	
+
 	
 		
 		        <hr class="featurette-divider">
@@ -70,6 +105,6 @@
         <p class="float-right"><a href="#">Back to top</a></p>
        <p align='center'> &copy; Copyright 2019, Marija Lalic, Martina Markovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</p>
       </footer>
-    </main>
+    
    </body>
  </html>
